@@ -23,6 +23,11 @@
 </head>
 <body>
 
+  <!-- 最頂部精緻資訊細條 (如參考圖頂部深色小字) -->
+  <div class="top-announcement-bar">
+    <span>本網站由逸安國際商行經營 · 用好的 • 陪你更好</span>
+  </div>
+
   <main class="main-container">
 
     <!-- ===============================================================
@@ -30,13 +35,13 @@
          =============================================================== -->
     <div id="homeView" class="page-view active-view">
 
-      <!-- 逸安國際商行 品牌精緻頂部標誌列 -->
+      <!-- 逸安國際商行 品牌頂部識別 -->
       <div class="brand-top-bar">
         <div class="brand-badge">
           <img src="images/brand_logo.png" alt="逸安國際商行 商標" class="brand-top-logo">
           <div class="brand-text-col">
             <span class="brand-main-title">逸安國際商行</span>
-            <span class="brand-sub-title">用好的 • 陪你更好</span>
+            <span class="brand-sub-title">安安 & 黏黏 · 用好的，陪你更好</span>
           </div>
         </div>
       </div>
@@ -57,60 +62,115 @@
         <h1 class="cat-name">黏 黏 <span class="en-name">Nian Nian</span></h1>
         
         <div class="badges-row">
-          <span class="badge badge-primary">🐱 黏踢踢橘貓男孩</span>
+          <span class="badge badge-primary">🐱 橘貓暖男</span>
           <span class="badge badge-secondary">♥ 撒嬌滿分</span>
           <span class="badge badge-accent">👑 嚴選代言喵</span>
         </div>
-
-        <p class="cat-bio">
-          嗨！我是<strong>黏黏</strong>🐾 一隻最愛跟麻麻撒嬌、熱愛吃機能凍乾的橘貓暖男！歡迎來到我的專屬小天地～
-        </p>
 
         <!-- 摸摸黏黏互動按鈕 -->
         <div class="interaction-area">
           <button id="petButton" class="pet-button" aria-label="摸摸黏黏">
             <span class="pet-icon">🐾</span>
-            <span class="pet-text">摸摸黏黏</span>
+            <span class="pet-text">摸一下黏黏</span>
             <span class="pet-counter" id="petCountBadge">已被摸 0 次</span>
           </button>
           <span class="interaction-hint">👆 摸一下會發出呼嚕聲與愛心喔！</span>
         </div>
       </header>
 
-      <!-- 我跟黏黏的故事 (Our Story) -->
-      <section class="story-essay-card">
-        <div class="story-essay-header">
-          <span class="story-essay-tag">📖 緣分啟程</span>
-          <h2 class="story-essay-title">我與黏黏的故事</h2>
+      <!-- 雜誌隨筆風：安安與黏黏的故事 (參考圖精緻排版) -->
+      <section class="editorial-story-card">
+        <!-- 上面小小的字 (分類眉標) -->
+        <div class="story-eyebrow">
+          <span>貓奴成長・安安與黏黏日常</span>
         </div>
-        
-        <div class="story-essay-body">
-          <p class="story-paragraph">
+
+        <!-- 醒目主題大標題 (部分文字突顯) -->
+        <h2 class="story-headline">
+          從颱風天相遇的小毛頭<br>
+          把養貓的焦慮不安，過成<span class="headline-highlight">有方法的療癒日常</span>
+        </h2>
+
+        <!-- 真摯故事段落 (純粹乾淨，不用過多解釋) -->
+        <div class="story-paragraphs">
+          <p>
             很多人認識我，是因為黏黏。<br>
             其實我們的緣分開始得很突然，那是在一個颱風天，才不到兩個月大的他出現在我生命裡。當時沒想太多，只覺得這孩子太小了，需要一個家，於是我就這樣成了貓奴。
           </p>
 
-          <p class="story-paragraph">
+          <p>
             但我沒想到，養貓這門課，真的好難。<br>
             作為第一次養貓的新手，我每天腦袋裡都有無數個問號：<em>『為什麼他不吃飯？』</em>、<em>『這個成分貓咪能吃嗎？』</em>上網查資料，卻發現資訊又多又亂，甚至很多說法都互相矛盾，讓我變得很焦慮，生怕一個不小心就害了他。
           </p>
 
-          <p class="story-paragraph">
+          <p>
             也就是在那時候，我決定成立這個頻道。<br>
             我想把學習到的正確知識、那些專業的醫學建議，用最簡單易懂的方式整理出來。與其說是我在教大家，不如說是我跟著黏黏一起在成長。
           </p>
 
-          <p class="story-paragraph highlight-paragraph">
+          <p class="story-invite">
             如果你也跟我一樣，想給毛孩最好的，卻不知道從哪裡開始，歡迎追蹤我們，讓我們一起成為更好的鏟屎官。
           </p>
         </div>
 
-        <div class="story-essay-footer">
-          <div class="story-author-signature">
-            <span class="author-quote">「我是安安，這是黏黏，我們的故事才剛開始。」</span>
-            <span class="author-name">🐾 安安 & 黏黏</span>
+        <div class="story-signature-wrap">
+          <span class="signature-quote">「我是安安，這是黏黏，我們的故事才剛開始。」</span>
+          <span class="signature-author">🐾 安安 & 黏黏</span>
+        </div>
+
+        <!-- 開團區的按鈕大一點就好 (醒目大按鈕) -->
+        <div class="main-cta-box">
+          <button type="button" class="big-groupbuy-cta" id="openShopBtn">
+            <div class="big-cta-icon">🛍️</div>
+            <div class="big-cta-content">
+              <span class="big-cta-title">進入黏黏麻開團專區 ➜</span>
+              <span class="big-cta-sub">🎁 輸入專屬折扣碼 000349 享限時開團優惠</span>
+            </div>
+          </button>
+        </div>
+
+        <!-- 其他傳送門小小的字 / 變成小貓爪 (不用過多解釋) -->
+        <div class="paw-portals-box">
+          <span class="paw-portals-title">🐾 官方傳送門</span>
+          <div class="paw-pills-grid">
+            <!-- 1. 毛茸茸社群 -->
+            <a href="https://line.me/ti/g2/1yr7IigA4ahb10h13ZZnTlNnxLyDdGSsSPsvpQ?utm_source=invitation&utm_medium=link_copy&utm_campaign=default" 
+               target="_blank" 
+               rel="noopener noreferrer" 
+               class="cat-paw-pill">
+              <span class="paw-ico">🐾</span>
+              <span class="paw-txt">毛茸茸社群</span>
+            </a>
+
+            <!-- 2. Ig廣播區 -->
+            <a href="https://www.instagram.com/channel/r0uTzkwSUFx0xK9W/" 
+               target="_blank" 
+               rel="noopener noreferrer" 
+               class="cat-paw-pill">
+              <span class="paw-ico">🐾</span>
+              <span class="paw-txt">IG 廣播區</span>
+            </a>
+
+            <!-- 3. 黏黏麻的line -->
+            <a href="https://lin.ee/P8q4aqd" 
+               target="_blank" 
+               rel="noopener noreferrer" 
+               class="cat-paw-pill">
+              <span class="paw-ico">🐾</span>
+              <span class="paw-txt">黏黏麻 LINE</span>
+            </a>
+
+            <!-- 4. 懶人包指南 -->
+            <a href="https://cat-care-guide-ten.vercel.app/" 
+               target="_blank" 
+               rel="noopener noreferrer" 
+               class="cat-paw-pill">
+              <span class="paw-ico">🐾</span>
+              <span class="paw-txt">照顧懶人包</span>
+            </a>
           </div>
         </div>
+
       </section>
 
       <!-- 黏黏成長精華故事列 (Instagram Stories 風格) -->
@@ -149,138 +209,6 @@
               <img src="images/cat_model.png" alt="代言小模特">
             </div>
             <span class="story-label">專業代言</span>
-          </button>
-        </div>
-      </section>
-
-      <!-- 五大核心傳送門按鈕 -->
-      <section class="section-container" id="quickLinks">
-        <div class="section-title-wrap">
-          <span class="section-icon">🌟</span>
-          <h2 class="section-title">官方傳送門</h2>
-        </div>
-
-        <div class="links-grid">
-          <!-- 第一個按鈕：毛茸茸社群 -->
-          <a href="https://line.me/ti/g2/1yr7IigA4ahb10h13ZZnTlNnxLyDdGSsSPsvpQ?utm_source=invitation&utm_medium=link_copy&utm_campaign=default" 
-             target="_blank" 
-             rel="noopener noreferrer" 
-             class="link-card line-community-card">
-            <div class="link-card-left">
-              <div class="link-icon-box line-green">
-                <svg viewBox="0 0 24 24" width="26" height="26" fill="currentColor">
-                  <path d="M12 2C6.48 2 2 5.82 2 10.53c0 2.92 1.76 5.51 4.45 7.02-.2.72-.73 2.61-.84 3.01-.13.48.18.47.37.35.15-.09 2.06-1.39 2.89-1.96.69.1 1.4.15 2.13.15 5.52 0 10-3.82 10-8.53S17.52 2 12 2z"/>
-                </svg>
-              </div>
-              <div class="link-text-content">
-                <div class="link-header-row">
-                  <span class="link-title">毛茸茸社群</span>
-                  <span class="mini-tag tag-green">熱門群組</span>
-                </div>
-                <p class="link-desc">黏黏的貓友交流基地！聊貓、曬照、心得分享交流</p>
-              </div>
-            </div>
-            <div class="link-arrow">
-              <span>加入</span>
-              <svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="9 18 15 12 9 6"></polyline></svg>
-            </div>
-          </a>
-
-          <!-- 第二個按鈕：Ig廣播區 -->
-          <a href="https://www.instagram.com/channel/r0uTzkwSUFx0xK9W/" 
-             target="_blank" 
-             rel="noopener noreferrer" 
-             class="link-card ig-broadcast-card">
-            <div class="link-card-left">
-              <div class="link-icon-box ig-gradient">
-                <svg viewBox="0 0 24 24" width="26" height="26" fill="currentColor">
-                  <path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.163c0-3.403-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4 0-2.209 1.791-4 4-4s4 1.791 4 4c0 2.21-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z"/>
-                </svg>
-              </div>
-              <div class="link-text-content">
-                <div class="link-header-row">
-                  <span class="link-title">Ig廣播區</span>
-                  <span class="mini-tag tag-pink">最新動態</span>
-                </div>
-                <p class="link-desc">搶先鎖定黏黏的即時日常、幕後花絮與快訊！</p>
-              </div>
-            </div>
-            <div class="link-arrow">
-              <span>進入</span>
-              <svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="9 18 15 12 9 6"></polyline></svg>
-            </div>
-          </a>
-
-          <!-- 第三個按鈕：黏黏麻的line -->
-          <a href="https://lin.ee/P8q4aqd" 
-             target="_blank" 
-             rel="noopener noreferrer" 
-             class="link-card line-personal-card">
-            <div class="link-card-left">
-              <div class="link-icon-box line-green-light">
-                <svg viewBox="0 0 24 24" width="26" height="26" fill="currentColor">
-                  <path d="M20 4H4c-1.1 0-2 .9-2 2v12c0 1.1.9 2 2 2h16c1.1 0 2-.9 2-2V6c0-1.1-.9-2-2-2zm0 4l-8 5-8-5V6l8 5 8-5v2z"/>
-                </svg>
-              </div>
-              <div class="link-text-content">
-                <div class="link-header-row">
-                  <span class="link-title">黏黏麻的line</span>
-                  <span class="mini-tag tag-orange">一對一私訊</span>
-                </div>
-                <p class="link-desc">好物開團問題、養貓交流或合作洽詢請找麻麻</p>
-              </div>
-            </div>
-            <div class="link-arrow">
-              <span>私訊</span>
-              <svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="9 18 15 12 9 6"></polyline></svg>
-            </div>
-          </a>
-
-          <!-- 第四個按鈕：懶人包指南 -->
-          <a href="https://cat-care-guide-ten.vercel.app/" 
-             target="_blank" 
-             rel="noopener noreferrer" 
-             class="link-card guide-card">
-            <div class="link-card-left">
-              <div class="link-icon-box warm-blue">
-                <svg viewBox="0 0 24 24" width="26" height="26" fill="currentColor">
-                  <path d="M18 2H6c-1.1 0-2 .9-2 2v16c0 1.1.9 2 2 2h12c1.1 0 2-.9 2-2V4c0-1.1-.9-2-2-2zM6 4h5v8l-2.5-1.5L6 12V4z"/>
-                </svg>
-              </div>
-              <div class="link-text-content">
-                <div class="link-header-row">
-                  <span class="link-title">懶人包指南</span>
-                  <span class="mini-tag tag-blue">新手必讀</span>
-                </div>
-                <p class="link-desc">最實用的養貓照護指南！全方位新手飼養整理寶典</p>
-              </div>
-            </div>
-            <div class="link-arrow">
-              <span>閱讀</span>
-              <svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="9 18 15 12 9 6"></polyline></svg>
-            </div>
-          </a>
-
-          <!-- 第五個按鈕：黏黏麻開團專區 (點進去進入開團專屬商品頁面) -->
-          <button type="button" class="link-card groupbuy-feature-card" id="openShopBtn">
-            <div class="link-card-left">
-              <div class="link-icon-box warm-orange">
-                <svg viewBox="0 0 24 24" width="26" height="26" fill="currentColor">
-                  <path d="M19 6h-2c0-2.76-2.24-5-5-5S7 3.24 7 6H5c-1.1 0-2 .9-2 2v12c0 1.1.9 2 2 2h14c1.1 0 2-.9 2-2V8c0-1.1-.9-2-2-2zm-7-3c1.66 0 3 1.34 3 3H9c0-1.66 1.34-3 3-3zm7 17H5V8h14v12zm-7-8c-1.66 0-3-1.34-3-3H7c0 2.76 2.24 5 5 5s5-2.24 5-5h-2c0 1.66-1.34 3-3 3z"/>
-                </svg>
-              </div>
-              <div class="link-text-content">
-                <div class="link-header-row">
-                  <span class="link-title">黏黏麻開團專區</span>
-                  <span class="mini-tag tag-hot">🎁 專屬優惠</span>
-                </div>
-                <p class="link-desc">黏黏麻嚴選！輸入折扣碼 000349 享限時開團專屬特惠</p>
-              </div>
-            </div>
-            <div class="link-arrow highlight-arrow">
-              <span>點進專區</span>
-              <svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="9 18 15 12 9 6"></polyline></svg>
-            </div>
           </button>
         </div>
       </section>
