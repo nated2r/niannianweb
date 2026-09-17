@@ -184,7 +184,7 @@ document.addEventListener('DOMContentLoaded', () => {
   }
 
   function spawnParticle(x, y) {
-    const particles = ['🐾', '🧡', '✨', '💕', '🐱', '🐟', '🎟️'];
+    const particles = ['🐾', '♥', '✨', '🌸', '🐱', '🤎'];
     const char = particles[Math.floor(Math.random() * particles.length)];
     const el = document.createElement('span');
     el.className = 'floating-particle';

@@ -1,31 +1,47 @@
 /* ==========================================================================
-   黏黏 Nian Nian 專屬貓咪個人與開團導購風格樣式表 (手機最佳化 + 吃播精選按鈕)
+   黏黏 Nian Nian 專屬品牌官方風格樣式表
+   品牌識別：逸安國際商行 YI AN INTERNATIONAL TRADING
+   設計理念：質感簡約、溫暖療癒、日系生活美學、清楚可愛、乾淨純粹
    ========================================================================== */
 
 :root {
-  --primary-orange: #FF8A3D;
-  --primary-deep: #E66A1F;
-  --primary-light: #FFEEDB;
-  --paw-pink: #FF7B89;
-  --paw-pink-light: #FFE9EC;
-  --cream-bg: #FFF9F3;
-  --card-bg: #FFFFFF;
-  --text-main: #2F2623;
-  --text-muted: #7A6F6B;
-  --text-light: #9E928D;
-  --border-color: rgba(255, 138, 61, 0.18);
-  --shadow-sm: 0 4px 12px rgba(230, 106, 31, 0.08);
-  --shadow-md: 0 8px 22px rgba(230, 106, 31, 0.12);
-  --shadow-lg: 0 14px 34px rgba(230, 106, 31, 0.16);
+  /* 品牌核心色彩系統 (汲取自逸安國際商行貓咪商標) */
+  --brand-mocha: #5C4033;         /* 主色：商標貓咪與字體經典 溫暖可可深棕 */
+  --brand-mocha-dark: #432E24;    /* 濃焙可可色：按鈕懸停、深色點綴 */
+  --brand-mocha-light: #7E5B47;   /* 淺可可色：副標題、微強調文字 */
+  
+  --brand-rose: #D89990;          /* 點綴色：商標尾巴同款 氣質乾燥玫瑰粉 */
+  --brand-rose-deep: #B56C63;     /* 深玫瑰粉：重點標籤、複製完成按鈕 */
+  --brand-rose-soft: #FBF0EE;     /* 柔霧玫瑰粉底色 */
+  
+  --brand-sand: #EFE7DF;          /* 燕麥暖沙色 (商標貓咪陰影色) */
+  --brand-sand-light: #F7F3EF;    /* 淺燕麥底色：次級標籤、柔和背景 */
+  --brand-linen: #FAF6F2;         /* 亞麻米白 */
+  
+  --clean-bg: #FAF8F5;            /* 全站極簡純淨背景 (無雜色、不花俏、純粹清爽) */
+  --card-bg: #FFFFFF;             /* 核心卡片純白底色 */
+  
+  --text-main: #382821;           /* 主文字：深焙咖啡棕 (取代刺眼死黑，對比高且溫和) */
+  --text-muted: #7A6C64;          /* 次要說明：暖灰褐色 */
+  --text-light: #A89A92;          /* 輔助與備註文字 */
+  
+  --border-subtle: #EBE3DC;       /* 典雅細緻邊框 */
+  --border-hover: #D5C2B4;        /* 懸停邊框 */
+  
+  --shadow-sm: 0 2px 8px rgba(92, 64, 51, 0.04);
+  --shadow-md: 0 6px 18px rgba(92, 64, 51, 0.07);
+  --shadow-lg: 0 12px 28px rgba(92, 64, 51, 0.10);
+  
   --radius-sm: 12px;
-  --radius-md: 16px;
+  --radius-md: 18px;
   --radius-lg: 24px;
   --radius-full: 9999px;
+  
   --font-base: 'Noto Sans TC', -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
   --font-round: 'M PLUS Rounded 1c', 'Noto Sans TC', sans-serif;
 }
 
-/* Reset & Base */
+/* 基礎重置與排版設定 */
 *, *::before, *::after {
   box-sizing: border-box;
   margin: 0;
@@ -35,16 +51,16 @@
 
 html {
   scroll-behavior: smooth;
-  font-size: 15px; /* Optimally sized for mobile devices */
+  font-size: 15px; /* 精準適配手機螢幕手感 */
 }
 
 body {
   font-family: var(--font-base);
-  background-color: var(--cream-bg);
+  background-color: var(--clean-bg);
+  /* 乾淨、明亮、柔和的頂部微光，消除原本花花綠綠的雜亂感 */
   background-image: 
-    radial-gradient(circle at 10% 20%, rgba(255, 138, 61, 0.08) 0%, transparent 40%),
-    radial-gradient(circle at 90% 80%, rgba(255, 123, 137, 0.08) 0%, transparent 40%),
-    radial-gradient(circle at 50% 50%, rgba(255, 238, 219, 0.45) 0%, transparent 80%);
+    radial-gradient(circle at 50% 0%, rgba(222, 185, 163, 0.12) 0%, transparent 45%),
+    radial-gradient(circle at 85% 60%, rgba(216, 153, 144, 0.05) 0%, transparent 40%);
   background-attachment: fixed;
   color: var(--text-main);
   line-height: 1.55;
@@ -53,41 +69,7 @@ body {
   overflow-x: hidden;
 }
 
-/* Floating background decorations */
-.background-decorations {
-  position: fixed;
-  top: 0;
-  left: 0;
-  width: 100vw;
-  height: 100vh;
-  pointer-events: none;
-  z-index: 0;
-  overflow: hidden;
-}
-
-.bubble {
-  position: absolute;
-  font-size: 1.5rem;
-  opacity: 0.18;
-  animation: floatUp 14s infinite linear;
-  user-select: none;
-}
-
-.b1 { left: 6%; bottom: -10%; animation-duration: 16s; animation-delay: 0s; font-size: 1.8rem; }
-.b2 { left: 88%; bottom: -10%; animation-duration: 18s; animation-delay: 3s; font-size: 1.6rem; }
-.b3 { left: 20%; bottom: -10%; animation-duration: 20s; animation-delay: 6s; font-size: 1.3rem; }
-.b4 { left: 72%; bottom: -10%; animation-duration: 15s; animation-delay: 2s; font-size: 1.4rem; }
-.b5 { left: 44%; bottom: -10%; animation-duration: 19s; animation-delay: 7s; font-size: 2rem; }
-.b6 { left: 94%; bottom: -10%; animation-duration: 22s; animation-delay: 4s; font-size: 1.2rem; }
-
-@keyframes floatUp {
-  0% { transform: translateY(0) rotate(0deg); opacity: 0; }
-  10% { opacity: 0.22; }
-  90% { opacity: 0.22; }
-  100% { transform: translateY(-110vh) rotate(360deg); opacity: 0; }
-}
-
-/* Main Container Layout - 精準適配手機螢幕寬度 (max-width: 480px) */
+/* 主容器排版 - 精準手機最佳化 (max-width: 480px) */
 .main-container {
   position: relative;
   z-index: 1;
@@ -96,14 +78,14 @@ body {
   padding: 16px 14px 60px;
 }
 
-/* Page Views Transitions */
+/* 雙頁面無縫切換動態 */
 .page-view {
   display: none;
   opacity: 0;
-  transform: translateY(10px);
-  transition: opacity 0.3s ease, transform 0.3s ease;
+  transform: translateY(8px);
+  transition: opacity 0.28s ease, transform 0.28s ease;
   flex-direction: column;
-  gap: 18px;
+  gap: 16px;
 }
 
 .page-view.active-view {
@@ -113,48 +95,100 @@ body {
 }
 
 /* ==========================================================================
+   品牌頂部識別列 (Brand Top Bar)
+   ========================================================================== */
+.brand-top-bar {
+  display: flex;
+  justify-content: center;
+  margin-bottom: 8px;
+}
+
+.brand-badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  background: rgba(255, 255, 255, 0.94);
+  border: 1px solid var(--border-subtle);
+  padding: 5px 16px 5px 8px;
+  border-radius: var(--radius-full);
+  box-shadow: var(--shadow-sm);
+  backdrop-filter: blur(6px);
+}
+
+.brand-top-logo {
+  width: 32px;
+  height: 32px;
+  object-fit: contain;
+  border-radius: 50%;
+  background: #FFFFFF;
+}
+
+.brand-text-col {
+  display: flex;
+  flex-direction: column;
+  text-align: left;
+}
+
+.brand-main-title {
+  font-family: var(--font-round);
+  font-size: 0.82rem;
+  font-weight: 800;
+  color: var(--brand-mocha);
+  letter-spacing: 0.8px;
+  line-height: 1.2;
+}
+
+.brand-sub-title {
+  font-size: 0.62rem;
+  color: var(--text-muted);
+  letter-spacing: 1px;
+  line-height: 1.2;
+}
+
+/* ==========================================================================
    VIEW 1: 首頁 (Home View)
    ========================================================================== */
 
+/* 主角黏黏個人卡片 */
 .hero-card {
   position: relative;
-  background: rgba(255, 255, 255, 0.95);
-  backdrop-filter: blur(12px);
-  border: 2px solid var(--border-color);
+  background: var(--card-bg);
+  border: 1.5px solid var(--border-subtle);
   border-radius: var(--radius-lg);
-  padding: 30px 18px 22px;
+  padding: 28px 18px 22px;
   text-align: center;
   box-shadow: var(--shadow-md);
   margin-top: 10px;
 }
 
+/* 呼應商標貓咪的立體萌耳 */
 .cat-ears-decor {
   position: absolute;
-  top: -12px;
+  top: -11px;
   left: 50%;
   transform: translateX(-50%);
-  width: 130px;
+  width: 120px;
   display: flex;
   justify-content: space-between;
   pointer-events: none;
 }
 
 .ear {
-  width: 26px;
-  height: 26px;
-  background: var(--primary-orange);
+  width: 24px;
+  height: 24px;
+  background: var(--brand-mocha);
   position: relative;
   border-radius: 4px;
 }
 
 .ear-left {
   transform: rotate(-30deg) skewX(-20deg);
-  border-top-left-radius: 10px;
+  border-top-left-radius: 8px;
 }
 
 .ear-right {
   transform: rotate(30deg) skewX(20deg);
-  border-top-right-radius: 10px;
+  border-top-right-radius: 8px;
 }
 
 .ear::after {
@@ -164,30 +198,31 @@ body {
   left: 3px;
   right: 3px;
   bottom: 3px;
-  background: var(--paw-pink-light);
+  background: var(--brand-rose-soft);
   border-radius: inherit;
 }
 
+/* 黏黏圓形頭像 */
 .avatar-wrapper {
   position: relative;
-  width: 106px;
-  height: 106px;
+  width: 104px;
+  height: 104px;
   margin: 0 auto 12px;
 }
 
 .avatar-glow {
   position: absolute;
-  inset: -5px;
+  inset: -4px;
   border-radius: 50%;
-  background: linear-gradient(135deg, var(--primary-orange), var(--paw-pink));
+  background: linear-gradient(135deg, var(--brand-sand), var(--brand-rose));
   opacity: 0.45;
-  filter: blur(8px);
-  animation: pulseGlow 3s ease-in-out infinite alternate;
+  filter: blur(6px);
+  animation: pulseGlow 3.5s ease-in-out infinite alternate;
 }
 
 @keyframes pulseGlow {
-  0% { transform: scale(0.96); opacity: 0.35; }
-  100% { transform: scale(1.05); opacity: 0.65; }
+  0% { transform: scale(0.97); opacity: 0.35; }
+  100% { transform: scale(1.04); opacity: 0.55; }
 }
 
 .avatar-img {
@@ -198,33 +233,34 @@ body {
   border-radius: 50%;
   border: 3.5px solid #FFFFFF;
   box-shadow: var(--shadow-sm);
-  transition: transform 0.4s cubic-bezier(0.34, 1.56, 0.64, 1);
+  transition: transform 0.35s cubic-bezier(0.34, 1.56, 0.64, 1);
 }
 
 .avatar-wrapper:hover .avatar-img {
-  transform: scale(1.05) rotate(3deg);
+  transform: scale(1.04) rotate(2deg);
 }
 
 .avatar-badge {
   position: absolute;
   bottom: 0px;
   right: 0px;
-  background: linear-gradient(135deg, var(--primary-orange), var(--paw-pink));
-  color: #FFF;
+  background: var(--brand-rose);
+  color: #FFFFFF;
   width: 28px;
   height: 28px;
   border-radius: 50%;
-  border: 2px solid #FFFFFF;
+  border: 2.5px solid #FFFFFF;
   display: flex;
   align-items: center;
   justify-content: center;
-  font-size: 0.9rem;
+  font-size: 0.82rem;
   box-shadow: var(--shadow-sm);
 }
 
+/* 姓名與稱號 */
 .cat-name {
   font-family: var(--font-round);
-  font-size: 1.8rem;
+  font-size: 1.75rem;
   font-weight: 800;
   color: var(--text-main);
   letter-spacing: 1.5px;
@@ -232,10 +268,11 @@ body {
 }
 
 .cat-name .en-name {
-  font-size: 1rem;
-  color: var(--primary-orange);
+  font-size: 0.95rem;
+  color: var(--brand-mocha-light);
   font-weight: 700;
   margin-left: 6px;
+  letter-spacing: 0.5px;
 }
 
 .badges-row {
@@ -247,15 +284,29 @@ body {
 }
 
 .badge {
-  font-size: 0.74rem;
-  font-weight: 600;
+  font-size: 0.72rem;
+  font-weight: 700;
   padding: 3px 10px;
   border-radius: var(--radius-full);
 }
 
-.badge-primary { background: var(--primary-light); color: var(--primary-deep); }
-.badge-secondary { background: var(--paw-pink-light); color: #D33D52; }
-.badge-accent { background: #F3E8FF; color: #7E22CE; }
+.badge-primary { 
+  background: var(--brand-sand-light); 
+  color: var(--brand-mocha); 
+  border: 1px solid var(--border-subtle);
+}
+
+.badge-secondary { 
+  background: var(--brand-rose-soft); 
+  color: var(--brand-rose-deep); 
+  border: 1px solid #F3DDD9;
+}
+
+.badge-accent { 
+  background: #F4EFEA; 
+  color: var(--brand-mocha); 
+  border: 1px solid var(--border-subtle);
+}
 
 .cat-bio {
   color: var(--text-muted);
@@ -264,8 +315,12 @@ body {
   margin: 0 auto 14px;
 }
 
-.cat-bio strong { color: var(--primary-deep); }
+.cat-bio strong { 
+  color: var(--brand-mocha); 
+  font-weight: 700;
+}
 
+/* 摸摸互動區 */
 .interaction-area {
   display: flex;
   flex-direction: column;
@@ -277,22 +332,24 @@ body {
   display: inline-flex;
   align-items: center;
   gap: 7px;
-  background: linear-gradient(135deg, #FFF1E6 0%, #FFE3D1 100%);
-  color: var(--primary-deep);
-  border: 1.5px solid rgba(255, 138, 61, 0.4);
-  padding: 8px 18px;
+  background: var(--brand-sand-light);
+  color: var(--brand-mocha);
+  border: 1.5px solid var(--border-subtle);
+  padding: 7px 18px;
   border-radius: var(--radius-full);
-  font-size: 0.88rem;
+  font-size: 0.86rem;
   font-weight: 700;
   cursor: pointer;
-  box-shadow: 0 3px 10px rgba(255, 138, 61, 0.15);
-  transition: all 0.25s cubic-bezier(0.34, 1.56, 0.64, 1);
+  box-shadow: var(--shadow-sm);
+  transition: all 0.22s ease;
   user-select: none;
 }
 
 .pet-button:hover {
-  background: linear-gradient(135deg, #FFE8D6 0%, #FFD6BC 100%);
-  transform: translateY(-2px) scale(1.02);
+  background: var(--brand-sand);
+  transform: translateY(-2px);
+  box-shadow: var(--shadow-md);
+  border-color: var(--border-hover);
 }
 
 .pet-button:active {
@@ -300,12 +357,12 @@ body {
 }
 
 .pet-counter {
-  background: var(--primary-orange);
-  color: #FFF;
-  font-size: 0.72rem;
+  background: var(--brand-rose);
+  color: #FFFFFF;
+  font-size: 0.7rem;
   padding: 2px 7px;
   border-radius: var(--radius-full);
-  font-weight: 600;
+  font-weight: 700;
 }
 
 .interaction-hint {
@@ -313,24 +370,26 @@ body {
   color: var(--text-light);
 }
 
+/* 點擊噴發小微粒 (暖系粒子) */
 .floating-particle {
   position: fixed;
   pointer-events: none;
-  font-size: 1.3rem;
+  font-size: 1.25rem;
   z-index: 9999;
-  animation: particleFly 1.2s cubic-bezier(0.22, 1, 0.36, 1) forwards;
+  animation: particleFly 1.1s cubic-bezier(0.22, 1, 0.36, 1) forwards;
 }
 
 @keyframes particleFly {
-  0% { transform: translate(0, 0) scale(0.6); opacity: 1; }
-  100% { transform: translate(var(--dx), -90px) scale(1.3) rotate(var(--rot)); opacity: 0; }
+  0% { transform: translate(0, 0) scale(0.5); opacity: 1; }
+  100% { transform: translate(var(--dx), -85px) scale(1.2) rotate(var(--rot)); opacity: 0; }
 }
 
-/* Stories Section */
+/* ==========================================================================
+   黏黏成長故事時光 (Stories Bar)
+   ========================================================================== */
 .stories-section {
-  background: rgba(255, 255, 255, 0.88);
-  backdrop-filter: blur(8px);
-  border: 1.5px solid var(--border-color);
+  background: var(--card-bg);
+  border: 1.5px solid var(--border-subtle);
   border-radius: var(--radius-md);
   padding: 12px 14px;
   box-shadow: var(--shadow-sm);
@@ -352,8 +411,8 @@ body {
 
 .stories-subtitle {
   font-size: 0.72rem;
-  color: var(--primary-deep);
-  font-weight: 600;
+  color: var(--brand-rose-deep);
+  font-weight: 700;
 }
 
 .stories-bar {
@@ -387,11 +446,11 @@ body {
   height: 54px;
   border-radius: 50%;
   padding: 2px;
-  background: linear-gradient(135deg, var(--primary-orange), var(--paw-pink));
+  background: linear-gradient(135deg, var(--brand-mocha), var(--brand-rose));
   display: flex;
   align-items: center;
   justify-content: center;
-  box-shadow: 0 2px 7px rgba(255, 138, 61, 0.25);
+  box-shadow: 0 2px 7px rgba(92, 64, 51, 0.15);
 }
 
 .story-ring img {
@@ -409,19 +468,27 @@ body {
   color: var(--text-main);
 }
 
-/* Links Grid */
+/* ==========================================================================
+   五大官方傳送門 (清楚可愛、統一美感、不花綠)
+   ========================================================================== */
+.section-container {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
 .section-title-wrap {
   display: flex;
   align-items: center;
-  gap: 8px;
-  margin-bottom: 8px;
+  gap: 6px;
+  margin-bottom: 2px;
 }
 
-.section-icon { font-size: 1.2rem; }
+.section-icon { font-size: 1.1rem; }
 
 .section-title {
   font-family: var(--font-round);
-  font-size: 1.15rem;
+  font-size: 1.12rem;
   font-weight: 800;
   color: var(--text-main);
 }
@@ -432,18 +499,19 @@ body {
   gap: 10px;
 }
 
+/* 卡片基底：純白簡約、精緻溫暖細邊框 */
 .link-card {
   display: flex;
   align-items: center;
   justify-content: space-between;
   background: var(--card-bg);
-  border: 1.5px solid var(--border-color);
+  border: 1.5px solid var(--border-subtle);
   border-radius: var(--radius-md);
   padding: 13px 15px;
   text-decoration: none;
   color: inherit;
   box-shadow: var(--shadow-sm);
-  transition: all 0.2s ease;
+  transition: all 0.22s ease;
   position: relative;
   overflow: hidden;
   cursor: pointer;
@@ -456,7 +524,7 @@ body {
   position: absolute;
   top: 0;
   left: 0;
-  width: 4px;
+  width: 3.5px;
   height: 100%;
   background: transparent;
   transition: background 0.2s ease;
@@ -465,7 +533,7 @@ body {
 .link-card:hover {
   transform: translateY(-2px);
   box-shadow: var(--shadow-md);
-  border-color: rgba(255, 138, 61, 0.45);
+  border-color: var(--border-hover);
 }
 
 .link-card-left {
@@ -476,6 +544,7 @@ body {
   min-width: 0;
 }
 
+/* 統一雅緻的圖示容器 (不再五顏六色刺眼) */
 .link-icon-box {
   width: 40px;
   height: 40px;
@@ -483,31 +552,69 @@ body {
   display: flex;
   align-items: center;
   justify-content: center;
-  color: #FFF;
   flex-shrink: 0;
 }
 
-.line-green { background: #06C755; }
-.line-community-card::before { background: #06C755; }
+/* 1. 毛茸茸社群：柔和茶草綠 */
+.line-green { 
+  background: #EAF3EC; 
+  color: #2F6941; 
+}
+.line-community-card::before { background: #3B7E51; }
 
-.ig-gradient { background: linear-gradient(135deg, #f09433 0%, #e6683c 25%, #dc2743 50%, #cc2366 75%, #bc1888 100%); }
-.ig-broadcast-card::before { background: #E1306C; }
+/* 2. IG 廣播區：乾燥玫瑰粉 (呼應商標愛心) */
+.ig-gradient { 
+  background: var(--brand-rose-soft); 
+  color: var(--brand-rose-deep); 
+}
+.ig-broadcast-card::before { background: var(--brand-rose); }
 
-.line-green-light { background: #00B900; }
-.line-personal-card::before { background: #00B900; }
+/* 3. 黏黏麻的 LINE：暖燕麥奶茶色 */
+.line-green-light { 
+  background: var(--brand-sand-light); 
+  color: var(--brand-mocha); 
+}
+.line-personal-card::before { background: var(--brand-mocha); }
 
-.warm-blue { background: linear-gradient(135deg, #4FA3D1, #2A75D3); }
-.guide-card::before { background: #3B82F6; }
+/* 4. 懶人包指南：霧灰藍雅緻色 */
+.warm-blue { 
+  background: #EFF3F6; 
+  color: #4A657D; 
+}
+.guide-card::before { background: #5D7A94; }
 
-.warm-orange { background: linear-gradient(135deg, #FF9900, #FF5E36); }
-
+/* 5. 黏黏麻開團專區：典雅可可棕品牌主色旗艦卡片 */
 .groupbuy-feature-card {
-  background: linear-gradient(to right, #FFFFFF 40%, #FFF4EB 100%);
-  border: 2px solid rgba(255, 138, 61, 0.55);
+  background: linear-gradient(135deg, #5C4033 0%, #462F24 100%);
+  color: #FFFFFF;
+  border: 1.5px solid var(--brand-mocha-light);
+  box-shadow: 0 4px 16px rgba(92, 64, 51, 0.22);
 }
 
-.groupbuy-feature-card::before { background: var(--primary-orange); }
+.groupbuy-feature-card::before { 
+  background: var(--brand-rose); 
+}
 
+.groupbuy-feature-card .link-title {
+  color: #FFFFFF;
+}
+
+.groupbuy-feature-card .link-desc {
+  color: #EAE1D9;
+}
+
+.groupbuy-feature-card .warm-orange {
+  background: rgba(255, 255, 255, 0.16);
+  color: #FFFFFF;
+}
+
+.groupbuy-feature-card:hover {
+  border-color: var(--brand-rose);
+  transform: translateY(-2px);
+  box-shadow: 0 6px 22px rgba(92, 64, 51, 0.3);
+}
+
+/* 文字內容排版 */
 .link-text-content { flex: 1; min-width: 0; }
 
 .link-header-row {
@@ -532,29 +639,35 @@ body {
   text-overflow: ellipsis;
 }
 
+/* 氣質小標籤 (Mini Tags) */
 .mini-tag {
   font-size: 0.65rem;
   font-weight: 700;
-  padding: 1px 6px;
+  padding: 1.5px 6px;
   border-radius: var(--radius-full);
 }
 
-.tag-green { background: #E6F9EE; color: #059640; }
-.tag-pink { background: #FCE7F3; color: #DB2777; }
-.tag-orange { background: #FFEDD5; color: #C2410C; }
-.tag-blue { background: #E0F2FE; color: #0369A1; }
-.tag-hot { background: #FEE2E2; color: #DC2626; animation: flamePulse 1.8s infinite; }
+.tag-green { background: #EAF3EC; color: #2F6941; }
+.tag-pink { background: var(--brand-rose-soft); color: var(--brand-rose-deep); }
+.tag-orange { background: var(--brand-sand-light); color: var(--brand-mocha); }
+.tag-blue { background: #EFF3F6; color: #4A657D; }
+.tag-hot { 
+  background: var(--brand-rose); 
+  color: #FFFFFF; 
+  animation: softPulse 2.2s infinite; 
+}
 
-@keyframes flamePulse {
+@keyframes softPulse {
   0%, 100% { transform: scale(1); }
   50% { transform: scale(1.05); }
 }
 
+/* 右側導向箭頭 */
 .link-arrow {
   display: flex;
   align-items: center;
   gap: 3px;
-  color: var(--primary-orange);
+  color: var(--brand-mocha-light);
   font-size: 0.78rem;
   font-weight: 700;
   flex-shrink: 0;
@@ -562,19 +675,20 @@ body {
 }
 
 .highlight-arrow {
-  background: var(--primary-orange);
-  color: #FFF;
-  padding: 5px 10px;
+  background: var(--brand-rose);
+  color: #FFFFFF;
+  padding: 5px 11px;
   border-radius: var(--radius-full);
 }
 
 .groupbuy-feature-card:hover .highlight-arrow {
-  background: var(--primary-deep);
+  background: #E2A69E;
 }
 
+/* 露肉球安心熟睡小卡 */
 .sleeping-card {
-  background: rgba(255, 255, 255, 0.88);
-  border: 1.5px solid var(--border-color);
+  background: var(--card-bg);
+  border: 1.5px solid var(--border-subtle);
   border-radius: var(--radius-md);
   overflow: hidden;
   box-shadow: var(--shadow-sm);
@@ -604,7 +718,7 @@ body {
   position: absolute;
   bottom: 2px;
   left: 2px;
-  background: rgba(0, 0, 0, 0.65);
+  background: rgba(60, 40, 32, 0.75);
   color: #FFF;
   font-size: 0.6rem;
   padding: 1px 5px;
@@ -624,15 +738,15 @@ body {
    VIEW 2: 獨立開團專區 (Group Buy Shop View)
    ========================================================================== */
 
+/* 導航列 */
 .shop-nav-bar {
   display: flex;
   align-items: center;
   justify-content: space-between;
-  background: rgba(255, 255, 255, 0.94);
-  backdrop-filter: blur(10px);
+  background: var(--card-bg);
   padding: 10px 14px;
   border-radius: var(--radius-md);
-  border: 1.5px solid var(--border-color);
+  border: 1.5px solid var(--border-subtle);
   box-shadow: var(--shadow-sm);
 }
 
@@ -640,9 +754,9 @@ body {
   display: inline-flex;
   align-items: center;
   gap: 4px;
-  background: var(--primary-light);
-  color: var(--primary-deep);
-  border: none;
+  background: var(--brand-sand-light);
+  color: var(--brand-mocha);
+  border: 1px solid var(--border-subtle);
   padding: 6px 12px;
   border-radius: var(--radius-full);
   font-size: 0.84rem;
@@ -652,8 +766,8 @@ body {
 }
 
 .back-home-btn:hover {
-  background: var(--primary-orange);
-  color: #FFF;
+  background: var(--brand-mocha);
+  color: #FFFFFF;
 }
 
 .shop-nav-title {
@@ -663,12 +777,13 @@ body {
   color: var(--text-main);
 }
 
+/* 開團主視覺代言橫幅 */
 .shop-header-banner {
-  background: linear-gradient(135deg, #FFFFFF 40%, #FFF5EC 100%);
-  border: 2px solid var(--primary-orange);
+  background: var(--card-bg);
+  border: 1.5px solid var(--border-subtle);
   border-radius: var(--radius-lg);
   padding: 16px;
-  box-shadow: var(--shadow-md);
+  box-shadow: var(--shadow-sm);
 }
 
 .model-cat-card {
@@ -692,7 +807,7 @@ body {
   border-radius: var(--radius-md);
   overflow: hidden;
   box-shadow: var(--shadow-sm);
-  border: 2.5px solid #FFF;
+  border: 2px solid var(--border-subtle);
 }
 
 .model-cat-img {
@@ -706,16 +821,31 @@ body {
   bottom: 4px;
   left: 50%;
   transform: translateX(-50%);
-  background: linear-gradient(135deg, #9333EA, #7E22CE);
+  background: var(--brand-mocha);
   color: #FFF;
   font-size: 0.65rem;
   font-weight: 700;
-  padding: 2px 6px;
+  padding: 2px 7px;
   border-radius: var(--radius-full);
   white-space: nowrap;
 }
 
 .model-cat-intro { flex: 1; }
+
+.shop-brand-mark {
+  margin-bottom: 4px;
+}
+
+.brand-sub-badge {
+  display: inline-block;
+  font-size: 0.68rem;
+  font-weight: 700;
+  color: var(--brand-rose-deep);
+  background: var(--brand-rose-soft);
+  padding: 1px 8px;
+  border-radius: var(--radius-full);
+  letter-spacing: 0.5px;
+}
 
 .shop-hero-title {
   font-family: var(--font-round);
@@ -732,7 +862,7 @@ body {
   margin-bottom: 8px;
 }
 
-.shop-hero-desc strong { color: var(--primary-deep); }
+.shop-hero-desc strong { color: var(--brand-mocha); }
 
 .shop-guarantee-tags {
   display: flex;
@@ -743,14 +873,14 @@ body {
 .shop-guarantee-tags span {
   font-size: 0.68rem;
   font-weight: 700;
-  background: #FFF;
-  color: var(--primary-deep);
-  border: 1px solid rgba(255, 138, 61, 0.3);
+  background: var(--brand-sand-light);
+  color: var(--brand-mocha);
+  border: 1px solid var(--border-subtle);
   padding: 2px 7px;
   border-radius: var(--radius-full);
 }
 
-/* Coupon Section */
+/* 折扣碼專屬區塊 (日系禮券票根質感) */
 .coupon-feature-section {
   display: flex;
   flex-direction: column;
@@ -761,32 +891,33 @@ body {
   display: flex;
   align-items: center;
   justify-content: space-between;
-  background: linear-gradient(135deg, #FF6B6B 0%, #FF8A3D 100%);
-  color: #FFF;
+  background: linear-gradient(135deg, var(--brand-mocha) 0%, var(--brand-mocha-light) 100%);
+  color: #FFFFFF;
   border: none;
   border-radius: var(--radius-md);
   padding: 12px 16px;
   cursor: pointer;
-  box-shadow: 0 4px 14px rgba(255, 107, 107, 0.35);
-  transition: all 0.25s ease;
+  box-shadow: 0 4px 14px rgba(92, 64, 51, 0.22);
+  transition: all 0.22s ease;
   position: relative;
   overflow: hidden;
 }
 
 .claim-coupon-trigger:hover {
   transform: translateY(-2px);
+  box-shadow: 0 6px 18px rgba(92, 64, 51, 0.28);
 }
 
-.coupon-gift-icon { font-size: 1.3rem; }
+.coupon-gift-icon { font-size: 1.2rem; }
 
 .coupon-trigger-text {
   font-family: var(--font-round);
-  font-size: 1rem;
+  font-size: 0.98rem;
   font-weight: 800;
 }
 
 .coupon-sparkle {
-  background: rgba(255, 255, 255, 0.25);
+  background: rgba(255, 255, 255, 0.2);
   font-size: 0.72rem;
   font-weight: 700;
   padding: 3px 8px;
@@ -795,8 +926,8 @@ body {
 
 .coupon-card-box {
   display: none;
-  background: linear-gradient(135deg, #FFFDF9 0%, #FFF5EB 100%);
-  border: 2px dashed #FF8A3D;
+  background: #FFFDFB;
+  border: 2px dashed var(--brand-mocha-light);
   border-radius: var(--radius-md);
   padding: 14px 15px;
   box-shadow: var(--shadow-sm);
@@ -820,8 +951,8 @@ body {
 }
 
 .coupon-badge-tag {
-  background: var(--primary-deep);
-  color: #FFF;
+  background: var(--brand-mocha);
+  color: #FFFFFF;
   font-size: 0.66rem;
   font-weight: 700;
   padding: 2px 7px;
@@ -841,7 +972,7 @@ body {
   justify-content: space-between;
   gap: 8px;
   background: #FFFFFF;
-  border: 1.5px solid rgba(255, 138, 61, 0.35);
+  border: 1.5px solid var(--border-subtle);
   border-radius: var(--radius-sm);
   padding: 7px 10px;
 }
@@ -863,20 +994,20 @@ body {
   font-family: 'Courier New', Courier, monospace;
   font-size: 1.35rem;
   font-weight: 900;
-  color: var(--primary-deep);
+  color: var(--brand-mocha);
   letter-spacing: 2.5px;
-  background: #FFF1E5;
+  background: var(--brand-sand-light);
   padding: 1px 7px;
   border-radius: 6px;
-  border: 1px solid rgba(255, 138, 61, 0.4);
+  border: 1px solid var(--border-subtle);
 }
 
 .copy-coupon-btn {
   display: inline-flex;
   align-items: center;
   gap: 4px;
-  background: var(--primary-orange);
-  color: #FFF;
+  background: var(--brand-rose);
+  color: #FFFFFF;
   border: none;
   padding: 8px 12px;
   border-radius: var(--radius-sm);
@@ -884,33 +1015,36 @@ body {
   font-weight: 700;
   cursor: pointer;
   white-space: nowrap;
+  transition: background 0.2s ease;
+}
+
+.copy-coupon-btn:hover {
+  background: var(--brand-rose-deep);
 }
 
 .copy-coupon-btn.copied {
-  background: #059640;
+  background: #3B7E51;
 }
 
 .coupon-note-box {
-  background: #FEF3C7;
-  border-left: 3.5px solid #F59E0B;
+  background: var(--brand-sand-light);
+  border-left: 3.5px solid var(--brand-mocha-light);
   padding: 8px 10px;
   border-radius: 6px;
 }
 
 .coupon-note-text {
   font-size: 0.78rem;
-  color: #92400E;
+  color: var(--brand-mocha);
   line-height: 1.4;
 }
 
 /* ==========================================================================
-   【全新新增】黏黏吃播 IG 精選按鈕樣式 (Highlights Section)
+   黏黏 IG 吃播精選 (機能餐 & 藍藻菌)
    ========================================================================== */
-
 .highlights-section {
-  background: rgba(255, 255, 255, 0.92);
-  backdrop-filter: blur(8px);
-  border: 1.5px solid rgba(255, 138, 61, 0.22);
+  background: var(--card-bg);
+  border: 1.5px solid var(--border-subtle);
   border-radius: var(--radius-md);
   padding: 12px 14px 14px;
   box-shadow: var(--shadow-sm);
@@ -924,8 +1058,8 @@ body {
 }
 
 .highlights-badge {
-  background: linear-gradient(135deg, #f09433, #dc2743);
-  color: #FFF;
+  background: var(--brand-mocha);
+  color: #FFFFFF;
   font-size: 0.68rem;
   font-weight: 700;
   padding: 2px 7px;
@@ -952,38 +1086,38 @@ body {
   padding: 10px 10px;
   border-radius: var(--radius-sm);
   text-decoration: none;
-  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.04);
+  box-shadow: var(--shadow-sm);
   transition: transform 0.2s ease, box-shadow 0.2s ease;
 }
 
 .highlight-action-btn:hover {
   transform: translateY(-2px);
-  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+  box-shadow: var(--shadow-md);
 }
 
 .btn-food {
-  background: linear-gradient(135deg, #FFF6F0 0%, #FFE9DC 100%);
-  border: 1.5px solid #FFBB8A;
-  color: #A33B00;
+  background: #FFFBF7;
+  border: 1.5px solid #ECDCCF;
+  color: var(--brand-mocha);
 }
 
 .btn-spirulina {
-  background: linear-gradient(135deg, #F0FDF4 0%, #DCFCE7 100%);
-  border: 1.5px solid #86EFAC;
-  color: #166534;
+  background: #F7FAF8;
+  border: 1.5px solid #D5E5DA;
+  color: #2D5E3C;
 }
 
 .highlight-btn-icon {
   width: 32px;
   height: 32px;
   border-radius: 50%;
-  background: #FFF;
+  background: #FFFFFF;
   display: flex;
   align-items: center;
   justify-content: center;
   font-size: 1.1rem;
   flex-shrink: 0;
-  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.06);
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.05);
 }
 
 .highlight-btn-content {
@@ -1011,42 +1145,41 @@ body {
 }
 
 /* ==========================================================================
-   商品列表 (固定一行兩格、格子完全等大、同品項放一起)
+   開團商品列表 (一行兩格、同品項放一起、格子完全等大)
    ========================================================================== */
-
 .shop-products-section {
   display: flex;
   flex-direction: column;
   gap: 10px;
 }
 
-/* 核心：桌面端與行動端均固定一行兩個 */
 .products-grid {
   display: grid;
   grid-template-columns: repeat(2, 1fr);
   gap: 10px;
 }
 
-/* 所有卡片大小完全相同 */
+/* 卡片嚴格等高等寬、簡約清爽 */
 .product-card {
   background: var(--card-bg);
-  border: 1.5px solid rgba(255, 138, 61, 0.22);
+  border: 1.5px solid var(--border-subtle);
   border-radius: var(--radius-md);
   overflow: hidden;
   display: flex;
   flex-direction: column;
   justify-content: space-between;
   box-shadow: var(--shadow-sm);
-  transition: transform 0.2s ease, box-shadow 0.2s ease;
+  transition: transform 0.2s ease, border-color 0.2s ease, box-shadow 0.2s ease;
   height: 100%;
 }
 
 .product-card:hover {
   transform: translateY(-2px);
-  border-color: var(--primary-orange);
+  border-color: var(--border-hover);
+  box-shadow: var(--shadow-md);
 }
 
-/* 商品圖片正方形比例 */
+/* 商品圖片 1:1 正方形 */
 .product-image-link {
   display: block;
   position: relative;
@@ -1055,14 +1188,14 @@ body {
   background: #FFFFFF;
   overflow: hidden;
   text-decoration: none;
-  border-bottom: 1px solid rgba(255, 138, 61, 0.12);
+  border-bottom: 1px solid var(--border-subtle);
 }
 
 .product-img {
   width: 100%;
   height: 100%;
   object-fit: contain;
-  padding: 6px;
+  padding: 8px;
   transition: transform 0.3s ease;
   display: block;
 }
@@ -1074,7 +1207,7 @@ body {
 .image-hover-hint {
   position: absolute;
   inset: 0;
-  background: rgba(255, 138, 61, 0.2);
+  background: rgba(92, 64, 51, 0.25);
   display: flex;
   align-items: center;
   justify-content: center;
@@ -1084,9 +1217,9 @@ body {
 }
 
 .image-hover-hint span {
-  background: rgba(35, 25, 22, 0.88);
+  background: rgba(56, 40, 33, 0.9);
   backdrop-filter: blur(4px);
-  color: #FFF;
+  color: #FFFFFF;
   font-size: 0.74rem;
   font-weight: 700;
   padding: 4px 10px;
@@ -1105,17 +1238,19 @@ body {
   font-weight: 700;
   padding: 2px 6px;
   border-radius: var(--radius-full);
-  background: var(--primary-light);
-  color: var(--primary-deep);
-  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.06);
+  background: var(--brand-sand-light);
+  color: var(--brand-mocha);
+  border: 1px solid var(--border-subtle);
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.04);
 }
 
 .hot-flag {
-  background: linear-gradient(135deg, #FF4B2B, #FF416C);
-  color: #FFF;
+  background: var(--brand-rose);
+  color: #FFFFFF;
+  border: none;
 }
 
-/* 內容區塊等高排版 */
+/* 內容區塊 */
 .product-info {
   padding: 10px 8px 8px;
   flex: 1;
@@ -1125,7 +1260,7 @@ body {
 
 .product-sub-brand {
   font-size: 0.68rem;
-  color: var(--primary-deep);
+  color: var(--brand-mocha-light);
   font-weight: 700;
   margin-bottom: 2px;
   white-space: nowrap;
@@ -1173,37 +1308,37 @@ body {
 
 .product-tags span {
   font-size: 0.62rem;
-  background: #F5EFEA;
+  background: var(--brand-sand-light);
   color: var(--text-muted);
   padding: 1.5px 5px;
   border-radius: 4px;
   font-weight: 500;
 }
 
-/* 行動按鈕 */
+/* 購買行動按鈕 */
 .product-action-btn {
   display: flex;
   align-items: center;
   justify-content: center;
   text-align: center;
-  background: var(--primary-light);
-  color: var(--primary-deep);
+  background: var(--brand-sand-light);
+  color: var(--brand-mocha);
   padding: 8px 10px;
   font-size: 0.8rem;
   font-weight: 700;
   text-decoration: none;
-  border-top: 1px solid rgba(255, 138, 61, 0.15);
+  border-top: 1px solid var(--border-subtle);
   transition: all 0.2s ease;
 }
 
 .product-card:hover .product-action-btn {
-  background: var(--primary-orange);
-  color: #FFF;
+  background: var(--brand-mocha);
+  color: #FFFFFF;
 }
 
 .back-home-bottom-btn {
   background: var(--card-bg);
-  border: 1.5px solid var(--border-color);
+  border: 1.5px solid var(--border-subtle);
   color: var(--text-main);
   padding: 10px 22px;
   border-radius: var(--radius-full);
@@ -1215,27 +1350,30 @@ body {
 }
 
 .back-home-bottom-btn:hover {
-  background: var(--primary-light);
-  color: var(--primary-deep);
+  background: var(--brand-sand-light);
+  color: var(--brand-mocha);
+  border-color: var(--border-hover);
 }
 
-/* Footer & Back to top */
+/* ==========================================================================
+   頁尾 (Footer) 與 商標標誌卡片
+   ========================================================================== */
 .site-footer {
-  margin-top: 10px;
+  margin-top: 14px;
   text-align: center;
   display: flex;
   flex-direction: column;
   align-items: center;
-  gap: 12px;
+  gap: 14px;
 }
 
 .share-page-btn {
   background: var(--card-bg);
-  border: 1.5px solid var(--border-color);
-  color: var(--text-main);
-  padding: 10px 20px;
+  border: 1.5px solid var(--border-subtle);
+  color: var(--brand-mocha);
+  padding: 9px 20px;
   border-radius: var(--radius-full);
-  font-size: 0.86rem;
+  font-size: 0.85rem;
   font-weight: 700;
   cursor: pointer;
   box-shadow: var(--shadow-sm);
@@ -1243,27 +1381,78 @@ body {
 }
 
 .share-page-btn:hover {
-  background: var(--primary-light);
-  color: var(--primary-deep);
+  background: var(--brand-sand-light);
+  transform: translateY(-1px);
+}
+
+/* 頁尾品牌卡片 (包含商標與「用好的 • 陪你更好」精神) */
+.footer-brand-card {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 12px;
+  background: var(--card-bg);
+  border: 1px solid var(--border-subtle);
+  padding: 12px 18px;
+  border-radius: var(--radius-md);
+  box-shadow: var(--shadow-sm);
+  max-width: 380px;
+  width: 100%;
+}
+
+.footer-brand-logo {
+  width: 44px;
+  height: 44px;
+  object-fit: contain;
+  flex-shrink: 0;
+}
+
+.footer-brand-text {
+  text-align: left;
+}
+
+.brand-company {
+  font-family: var(--font-round);
+  font-size: 0.95rem;
+  font-weight: 800;
+  color: var(--brand-mocha);
+  letter-spacing: 0.8px;
+  line-height: 1.2;
+}
+
+.brand-en {
+  font-size: 0.62rem;
+  color: var(--text-muted);
+  letter-spacing: 0.6px;
+  font-weight: 600;
+  margin-bottom: 2px;
+}
+
+.brand-motto {
+  font-size: 0.72rem;
+  color: var(--brand-rose-deep);
+  font-weight: 700;
+  letter-spacing: 1px;
 }
 
 .footer-note {
   color: var(--text-muted);
-  font-size: 0.82rem;
+  font-size: 0.8rem;
 }
 
-.copyright strong { color: var(--primary-deep); }
-.sub-copyright { font-size: 0.74rem; color: var(--text-light); margin-top: 3px; }
+.copyright strong { color: var(--brand-mocha); }
+.sub-copyright { font-size: 0.72rem; color: var(--text-light); margin-top: 3px; }
 
+/* 回到頂端浮動按鈕 */
 .back-to-top {
   position: fixed;
   bottom: 20px;
   right: 20px;
-  width: 40px;
-  height: 40px;
+  width: 38px;
+  height: 38px;
   border-radius: 50%;
-  background: var(--primary-orange);
-  color: #FFF;
+  background: var(--brand-mocha);
+  color: #FFFFFF;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -1271,8 +1460,8 @@ body {
   box-shadow: var(--shadow-md);
   opacity: 0;
   visibility: hidden;
-  transform: translateY(20px);
-  transition: all 0.3s ease;
+  transform: translateY(16px);
+  transition: all 0.25s ease;
   z-index: 100;
 }
 
@@ -1282,7 +1471,9 @@ body {
   transform: translateY(0);
 }
 
-/* Lightbox Modal */
+/* ==========================================================================
+   燈箱預覽視窗 (Lightbox Modal)
+   ========================================================================== */
 .lightbox-modal {
   position: fixed;
   inset: 0;
@@ -1292,7 +1483,7 @@ body {
   justify-content: center;
   opacity: 0;
   visibility: hidden;
-  transition: opacity 0.3s ease, visibility 0.3s ease;
+  transition: opacity 0.28s ease, visibility 0.28s ease;
   padding: 14px;
 }
 
@@ -1304,7 +1495,7 @@ body {
 .lightbox-backdrop {
   position: absolute;
   inset: 0;
-  background: rgba(18, 12, 10, 0.88);
+  background: rgba(30, 20, 16, 0.88);
   backdrop-filter: blur(8px);
 }
 
@@ -1316,9 +1507,9 @@ body {
   background: var(--card-bg);
   border-radius: var(--radius-lg);
   overflow: hidden;
-  box-shadow: 0 20px 50px rgba(0, 0, 0, 0.4);
-  transform: scale(0.92);
-  transition: transform 0.3s cubic-bezier(0.34, 1.3, 0.64, 1);
+  box-shadow: 0 20px 50px rgba(0, 0, 0, 0.35);
+  transform: scale(0.94);
+  transition: transform 0.28s cubic-bezier(0.34, 1.3, 0.64, 1);
   display: flex;
   flex-direction: column;
 }
@@ -1364,15 +1555,15 @@ body {
 
 .lightbox-info {
   padding: 14px 18px 18px;
-  background: #FFF;
+  background: #FFFFFF;
 }
 
 .lightbox-stage {
   display: inline-block;
   font-size: 0.7rem;
   font-weight: 700;
-  color: var(--primary-deep);
-  background: var(--primary-light);
+  color: var(--brand-mocha);
+  background: var(--brand-sand-light);
   padding: 2px 8px;
   border-radius: var(--radius-full);
   margin-bottom: 4px;
@@ -1414,22 +1605,22 @@ body {
 .nav-prev { left: 8px; }
 .nav-next { right: 8px; }
 
-/* Toast */
+/* 提示訊息 (Toast) */
 .toast-message {
   position: fixed;
   bottom: 24px;
   left: 50%;
   transform: translateX(-50%) translateY(100px);
-  background: rgba(35, 25, 22, 0.92);
+  background: rgba(56, 40, 33, 0.94);
   backdrop-filter: blur(8px);
-  color: #FFF;
+  color: #FFFFFF;
   padding: 9px 20px;
   border-radius: var(--radius-full);
   font-size: 0.85rem;
   font-weight: 600;
   box-shadow: 0 8px 24px rgba(0, 0, 0, 0.25);
   opacity: 0;
-  transition: all 0.3s cubic-bezier(0.34, 1.3, 0.64, 1);
+  transition: all 0.28s cubic-bezier(0.34, 1.3, 0.64, 1);
   z-index: 11000;
   pointer-events: none;
   width: max-content;
