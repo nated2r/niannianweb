@@ -435,9 +435,9 @@ body {
   flex-direction: column;
   gap: 2px;
   text-align: right;
-  padding-bottom: 16px;
-  margin-bottom: 16px;
-  border-bottom: 1px dashed var(--border-subtle);
+  padding-top: 14px;
+  margin-top: 14px;
+  border-top: 1px dashed var(--border-subtle);
 }
 
 .signature-quote {
@@ -455,10 +455,16 @@ body {
 }
 
 /* ==========================================================================
-   開團區的按鈕大一點就好 (醒目大按鈕)
+   快速傳送區塊：開團專區 ＆ 官方傳送門 (置頂於故事上方)
    ========================================================================== */
+.portal-action-section {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
 .main-cta-box {
-  margin-bottom: 16px;
+  margin-bottom: 0;
 }
 
 .big-groupbuy-cta {
@@ -509,16 +515,16 @@ body {
 }
 
 /* ==========================================================================
-   其他傳送門：小小的字 / 變成小貓爪 (不用過多解釋)
+   其他傳送門：小貓爪膠囊 (共 3 顆，不用過多解釋)
    ========================================================================== */
 .paw-portals-box {
   display: flex;
   flex-direction: column;
-  gap: 8px;
+  gap: 6px;
 }
 
 .paw-portals-title {
-  font-size: 0.74rem;
+  font-size: 0.72rem;
   font-weight: 700;
   color: var(--text-muted);
   letter-spacing: 0.5px;
@@ -526,36 +532,37 @@ body {
 
 .paw-pills-grid {
   display: grid;
-  grid-template-columns: repeat(2, 1fr);
-  gap: 8px;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 6px;
 }
 
 .cat-paw-pill {
   display: flex;
   align-items: center;
   justify-content: center;
-  gap: 6px;
-  background: var(--brand-sand-light);
-  border: 1px solid var(--border-subtle);
+  gap: 4px;
+  background: var(--card-bg);
+  border: 1.5px solid var(--border-subtle);
   color: var(--brand-mocha);
-  padding: 8px 10px;
+  padding: 8px 4px;
   border-radius: var(--radius-full);
   text-decoration: none;
-  font-size: 0.78rem;
+  font-size: 0.74rem;
   font-weight: 700;
   transition: all 0.2s ease;
-}
-
-.cat-paw-pill:hover {
-  background: #FFFFFF;
-  border-color: var(--brand-rose);
-  color: var(--brand-rose-deep);
-  transform: translateY(-1px);
   box-shadow: var(--shadow-sm);
 }
 
+.cat-paw-pill:hover {
+  background: var(--brand-sand-light);
+  border-color: var(--brand-rose);
+  color: var(--brand-rose-deep);
+  transform: translateY(-1px);
+  box-shadow: var(--shadow-md);
+}
+
 .paw-ico {
-  font-size: 0.84rem;
+  font-size: 0.8rem;
 }
 
 .paw-txt {
