@@ -5,12 +5,14 @@
    couponOnly：只有領取折扣碼後才出現的方案（原價頁沒有這個組合）。
    couponHidden：領取折扣碼後不提供的方案（折扣頁沒有這個組合）。
    group：'pet'（毛孩好物）或 'human'（飼主專屬），決定在哪個分區顯示；notice：詳情頁的提醒文字。
+   kind：卡片上顯示的商品類型（一眼看出賣什麼）。
    variants / variantLabel：有多種香味或款式時，買家可混搭選擇；總數量仍合併計算方案價。
    descImages：商品介紹長圖（直接引用原供貨頁的圖片，點開「商品介紹」才會載入）。
    ========================================================================== */
 window.NIAN_PRODUCTS = [
   {
     id: 'food-1150',
+    kind: '貓狗主食｜凍乾益菌糧',
     descImages: ['https://dxpqg5f7jnxq8.cloudfront.net/editor/GA00494250003/17643082337293.jpg',
       
       'https://dxpqg5f7jnxq8.cloudfront.net/editor/GA00494250005/17920313416451.jpg',
@@ -72,6 +74,7 @@ window.NIAN_PRODUCTS = [
   },
   {
     id: 'food-500',
+    kind: '貓狗主食｜凍乾益菌糧',
     descImages: [
       'https://dxpqg5f7jnxq8.cloudfront.net/editor/GA00494260003/17920306373506.jpg',
       'https://dxpqg5f7jnxq8.cloudfront.net/editor/GA00494260003/17920306772459.jpg',
@@ -132,6 +135,7 @@ window.NIAN_PRODUCTS = [
   },
   {
     id: 'spray-100',
+    kind: '皮膚舒緩｜寵物噴霧',
     descImages: ['https://dxpqg5f7jnxq8.cloudfront.net/editor/DI00447250009/17502382041354.jpg'],
     brand: 'AMDS 微量元素',
     name: '寵物噴霧大瓶 100ml',
@@ -159,6 +163,7 @@ window.NIAN_PRODUCTS = [
   },
   {
     id: 'spray-20',
+    kind: '皮膚舒緩｜寵物噴霧',
     descImages: ['https://dxpqg5f7jnxq8.cloudfront.net/editor/DI00447260012/17797622679948.jpg'],
     brand: 'AMDS 微量元素',
     name: '寵物噴霧小瓶 20ml',
@@ -189,6 +194,7 @@ window.NIAN_PRODUCTS = [
   },
   {
     id: 'probiotics',
+    kind: '寵物保健｜藍藻益生菌',
     descImages: ['https://dxpqg5f7jnxq8.cloudfront.net/editor/JU00027260100/17852957373184.png',
       
       'https://dxpqg5f7jnxq8.cloudfront.net/editor/JU00027260100/17851404453471.jpg',
@@ -225,6 +231,7 @@ window.NIAN_PRODUCTS = [
   },
   {
     id: 'wipes',
+    kind: '清潔用品｜寵物濕紙巾',
     descImages: ['https://dxpqg5f7jnxq8.cloudfront.net/editor/SH00169200014/16341187829456.jpg'],
     brand: 'Platinm 白金盾',
     name: '抗菌濕式衛生紙 80抽',
@@ -255,6 +262,7 @@ window.NIAN_PRODUCTS = [
   /* ===================== 新增商品：毛孩好物 ===================== */
   {
     id: 'shampoo-2000',
+    kind: '洗澡用品｜寵物洗毛露',
     group: 'pet',
     descImages: [
       'https://dxpqg5f7jnxq8.cloudfront.net/editor/GA00494260016/17829840419322.jpg',
@@ -299,6 +307,7 @@ window.NIAN_PRODUCTS = [
   },
   {
     id: 'slowbowl',
+    kind: '餵食用品｜慢食碗＋舔食墊',
     group: 'pet',
     descImages: [
       'https://dxpqg5f7jnxq8.cloudfront.net/editor/GA00494260017/17829849279805.jpg',
@@ -334,6 +343,7 @@ window.NIAN_PRODUCTS = [
   /* ===================== 新增商品：飼主專屬 ===================== */
   {
     id: 'spirulina-300',
+    kind: '飼主保健｜藍藻錠',
     group: 'human',
     descImages: [
       'https://dxpqg5f7jnxq8.cloudfront.net/editor/JU00027230015/17144633664145.jpg'
@@ -367,6 +377,7 @@ window.NIAN_PRODUCTS = [
   },
   {
     id: 'enzyme-30',
+    kind: '飼主保健｜夜酵素',
     group: 'human',
     descImages: [
       'https://dxpqg5f7jnxq8.cloudfront.net/editor/CH00208250006/17395239190746.jpg',
@@ -404,6 +415,7 @@ window.NIAN_PRODUCTS = [
   },
   {
     id: 'enzyme-80',
+    kind: '飼主保健｜夜酵素',
     group: 'human',
     descImages: [
       'https://dxpqg5f7jnxq8.cloudfront.net/editor/CH00208250005/17399442066701.jpg',

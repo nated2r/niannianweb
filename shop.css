@@ -449,3 +449,68 @@ textarea.cart-field { resize: vertical; min-height: 60px; }
   padding: 9px 12px;
 }
 .cart-lottery strong { color: var(--brand-rose-deep); }
+
+/* ==========================================================================
+   開團專區：字放大、商品卡改成橫式大格（圖在左、文字在右）
+   ========================================================================== */
+#shopView .shop-nav-title { font-size: 1.12rem; }
+#shopView .back-home-btn { font-size: 0.92rem; padding: 8px 16px; }
+#shopView .shop-hero-title { font-size: 1.35rem; }
+#shopView .shop-hero-desc { font-size: 0.95rem; line-height: 1.65; }
+#shopView .shop-guarantee-tags span { font-size: 0.82rem; padding: 5px 11px; }
+#shopView .model-cat-badge { font-size: 0.75rem; }
+#shopView .coupon-trigger-text { font-size: 1.05rem; }
+#shopView .coupon-sparkle { font-size: 0.82rem; }
+#shopView .coupon-header-title { font-size: 1rem; }
+#shopView .coupon-note-text { font-size: 0.9rem; line-height: 1.55; }
+#shopView .code-label { font-size: 0.85rem; }
+#shopView .copy-coupon-btn { font-size: 0.9rem; padding: 9px 13px; }
+#shopView .highlights-title { font-size: 1rem; }
+#shopView .highlights-badge { font-size: 0.78rem; }
+#shopView .highlight-btn-label { font-size: 0.92rem; }
+#shopView .highlight-btn-sub { font-size: 0.74rem; }
+#shopView .group-title span { font-size: 1.2rem; }
+#shopView .group-title small { font-size: 0.85rem; }
+
+.products-grid { grid-template-columns: 1fr; gap: 14px; }
+.product-card {
+  display: grid;
+  grid-template-columns: 42% 1fr;
+  grid-template-areas: "img info" "btn btn";
+  height: auto;
+  align-items: stretch;
+}
+.product-card .product-image-link { grid-area: img; aspect-ratio: 1 / 1; height: auto; }
+.product-card .product-info { grid-area: info; padding: 14px 14px 10px; justify-content: center; gap: 2px; }
+.product-card .product-action-btn { grid-area: btn; font-size: 1rem; padding: 13px; }
+.product-card .product-badge-flag { font-size: 0.74rem; padding: 3px 9px; top: 8px; right: 8px; }
+.product-kind {
+  align-self: flex-start;
+  background: var(--brand-rose-soft);
+  color: var(--brand-rose-deep);
+  font-size: 0.78rem;
+  font-weight: 800;
+  padding: 3px 10px;
+  border-radius: var(--radius-full);
+  margin-bottom: 6px;
+}
+.product-card .product-sub-brand { font-size: 0.8rem; margin-bottom: 2px; }
+.product-card .product-name { font-size: 1.1rem; line-height: 1.35; min-height: 0; -webkit-line-clamp: 3; margin-bottom: 4px; }
+.product-card .product-intro { font-size: 0.86rem; line-height: 1.5; min-height: 0; -webkit-line-clamp: 3; margin-bottom: 8px; }
+.product-card .product-tags { margin-bottom: 8px; gap: 5px; }
+.product-card .product-tags span { font-size: 0.76rem; padding: 3px 8px; }
+.product-card .product-price { font-size: 1.3rem; }
+.product-card .product-price small { font-size: 0.8rem; }
+
+/* 商品詳情字放大 */
+.sheet-title { font-size: 1.2rem; }
+.sheet-intro { font-size: 0.95rem; }
+.sheet-label { font-size: 0.9rem; }
+.plan-name { font-size: 0.92rem; }
+.plan-price { font-size: 1.12rem; }
+.plan-avg { font-size: 0.76rem; }
+.spec-block summary { font-size: 0.95rem; }
+.spec-list > div, .spec-text { font-size: 0.88rem; }
+.cart-item-name { font-size: 0.95rem; }
+.cart-item-plan, .cart-line-label { font-size: 0.85rem; }
+.product-kind + .product-sub-brand { margin-top: 0; }

@@ -115,6 +115,7 @@
             <span class="product-badge-flag${p.hot ? ' hot-flag' : ''}">${esc(p.flag)}</span>
           </button>
           <div class="product-info">
+            <span class="product-kind">${esc(p.kind || '')}</span>
             <div class="product-sub-brand">${esc(p.brand)}</div>
             <h3 class="product-name"><button type="button" class="product-name-btn" data-open="${p.id}">${esc(p.name)}</button></h3>
             <p class="product-intro">${esc(p.intro)}</p>
@@ -168,6 +169,7 @@
     sheetBody.innerHTML = `
       <div class="sheet-img-wrap"><img src="${p.image}" alt="${esc(p.name)}"></div>
       <div class="sheet-main">
+        <span class="product-kind">${esc(p.kind || '')}</span>
         <div class="product-sub-brand">${esc(p.brand)}</div>
         <h3 class="sheet-title">${esc(p.fullName)}</h3>
         <p class="sheet-intro">${esc(p.intro)}</p>
