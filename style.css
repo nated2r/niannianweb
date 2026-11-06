@@ -921,377 +921,43 @@ body {
 }
 
 /* ==========================================================================
-   開團專區：雙11寵愛加碼原生卡片 (融入畫面整體暖棕奶茶風格)
+   開團專區：雙11寵愛加碼活動海報卡片 (圖三)
    ========================================================================== */
 .shop-campaign-section {
   margin-bottom: 14px;
 }
 
-.shop-campaign-card {
+.shop-poster-card {
+  position: relative;
   background: var(--bg-card);
   border-radius: var(--radius-md);
   border: 1.5px solid var(--border-subtle);
-  padding: 16px 14px;
+  overflow: hidden;
   box-shadow: 0 4px 18px rgba(92, 64, 51, 0.08);
-  display: flex;
-  flex-direction: column;
-  gap: 12px;
 }
 
-/* 頭部眉標與標題 */
-.campaign-header {
-  text-align: center;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  gap: 5px;
-  padding-bottom: 6px;
-  border-bottom: 1px dashed var(--brand-sand-dark);
-}
-
-.campaign-eyebrow {
-  display: flex;
-  align-items: center;
-  gap: 8px;
-}
-
-.campaign-badge {
+.shop-poster-badge {
+  position: absolute;
+  top: 10px;
+  left: 10px;
   background: linear-gradient(135deg, #D89990 0%, #B86B60 100%);
   color: #FFFFFF;
   font-size: 0.72rem;
   font-weight: 800;
-  padding: 3px 10px;
+  padding: 4px 10px;
   border-radius: var(--radius-full);
-  box-shadow: 0 2px 8px rgba(184, 107, 96, 0.3);
+  box-shadow: 0 2px 8px rgba(184, 107, 96, 0.35);
+  z-index: 2;
   letter-spacing: 0.3px;
 }
 
-.campaign-date {
-  font-size: 0.72rem;
-  font-weight: 700;
-  color: var(--brand-mocha-light);
-  letter-spacing: 0.2px;
-}
-
-.campaign-title {
-  font-family: var(--font-round);
-  font-size: 1.12rem;
-  font-weight: 800;
-  color: var(--brand-mocha);
-  letter-spacing: 0.3px;
-  margin: 0;
-  line-height: 1.35;
-}
-
-.campaign-highlight {
-  color: #C95E50;
-  position: relative;
-  display: inline-block;
-}
-
-.campaign-subtitle {
-  font-size: 0.74rem;
-  color: var(--text-muted);
-  line-height: 1.4;
-  margin: 0;
-}
-
-.campaign-subtitle strong {
-  color: var(--brand-mocha);
-  font-weight: 700;
-}
-
-/* 核心回饋 1：滿額直接送 */
-.campaign-featured-block {
-  background: #FFF8F5;
-  border: 1.5px solid #F5D5C8;
-  border-radius: var(--radius-sm);
-  padding: 12px 14px;
-  position: relative;
-  display: flex;
-  flex-direction: column;
-  gap: 8px;
-}
-
-.featured-gift-tag {
-  align-self: flex-start;
-  background: linear-gradient(135deg, #D89990 0%, #C97F75 100%);
-  color: #FFFFFF;
-  font-size: 0.68rem;
-  font-weight: 800;
-  padding: 2px 8px;
-  border-radius: var(--radius-full);
-  letter-spacing: 0.2px;
-}
-
-.featured-gift-content {
-  display: flex;
-  align-items: center;
-  gap: 12px;
-}
-
-.featured-gift-icon {
-  font-size: 2.1rem;
-  line-height: 1;
-  flex-shrink: 0;
-  background: #FFFFFF;
-  width: 50px;
-  height: 50px;
-  border-radius: 50%;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  border: 1.5px solid #F0D0C2;
-  box-shadow: 0 2px 6px rgba(216, 153, 144, 0.2);
-}
-
-.featured-gift-info {
-  display: flex;
-  flex-direction: column;
-  gap: 2px;
-}
-
-.gift-cond-pill {
-  display: inline-block;
-  font-size: 0.68rem;
-  font-weight: 800;
-  color: #C95E50;
-  letter-spacing: 0.3px;
-}
-
-.gift-item-title {
-  font-family: var(--font-round);
-  font-size: 0.95rem;
-  font-weight: 800;
-  color: var(--brand-mocha);
-  margin: 0;
-}
-
-.gift-item-desc {
-  font-size: 0.72rem;
-  color: var(--text-muted);
-  line-height: 1.4;
-  margin: 0;
-}
-
-/* 核心回饋 2：頭獎 貓咪騙水神器 */
-.campaign-grand-block {
-  background: #FCF8F2;
-  border: 1.5px solid #EADBCE;
-  border-radius: var(--radius-sm);
-  padding: 12px 14px;
-  display: flex;
-  flex-direction: column;
-  gap: 8px;
-}
-
-.grand-gift-tag {
-  align-self: flex-start;
-  background: linear-gradient(135deg, #A8795A 0%, #8C5E43 100%);
-  color: #FFFFFF;
-  font-size: 0.68rem;
-  font-weight: 800;
-  padding: 2px 8px;
-  border-radius: var(--radius-full);
-  letter-spacing: 0.2px;
-}
-
-.grand-gift-content {
-  display: flex;
-  align-items: center;
-  gap: 12px;
-}
-
-.grand-gift-icon {
-  font-size: 2.1rem;
-  line-height: 1;
-  flex-shrink: 0;
-  background: #FFFFFF;
-  width: 50px;
-  height: 50px;
-  border-radius: 50%;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  border: 1.5px solid #DFCCBA;
-  box-shadow: 0 2px 6px rgba(168, 121, 90, 0.18);
-}
-
-.grand-gift-info {
-  display: flex;
-  flex-direction: column;
-  gap: 2px;
-}
-
-.grand-item-title {
-  font-family: var(--font-round);
-  font-size: 0.95rem;
-  font-weight: 800;
-  color: var(--brand-mocha);
-  margin: 0;
-}
-
-.grand-item-desc {
-  font-size: 0.72rem;
-  color: var(--text-muted);
-  line-height: 1.4;
-  margin: 0;
-}
-
-/* 核心回饋 3：加碼獎品抽抽樂 3 欄小卡 */
-.campaign-draw-box {
-  display: flex;
-  flex-direction: column;
-  gap: 8px;
-}
-
-.draw-box-title {
-  display: flex;
-  align-items: center;
-  gap: 6px;
-  font-size: 0.78rem;
-  font-weight: 800;
-  color: var(--brand-mocha);
-  letter-spacing: 0.3px;
-}
-
-.campaign-prizes-grid {
-  display: grid;
-  grid-template-columns: repeat(3, 1fr);
-  gap: 8px;
-}
-
-.prize-pill-card {
-  background: #FAFAF8;
-  border: 1px solid var(--border-subtle);
-  border-radius: var(--radius-sm);
-  padding: 10px 6px;
-  text-align: center;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  gap: 4px;
-  transition: transform 0.2s ease, border-color 0.2s ease;
-}
-
-.prize-pill-card:hover {
-  transform: translateY(-2px);
-  border-color: var(--brand-rose);
-}
-
-.prize-quota-badge {
-  background: var(--brand-rose-light);
-  color: #A3483C;
-  font-size: 0.65rem;
-  font-weight: 800;
-  padding: 2px 6px;
-  border-radius: var(--radius-full);
-  display: inline-block;
-  line-height: 1.2;
-}
-
-.prize-emoji {
-  font-size: 1.55rem;
-  line-height: 1;
-  margin: 2px 0;
-}
-
-.prize-name {
-  font-family: var(--font-round);
-  font-size: 0.76rem;
-  font-weight: 800;
-  color: var(--brand-mocha);
-  line-height: 1.25;
-}
-
-.prize-sub {
-  font-size: 0.64rem;
-  color: var(--text-muted);
-  line-height: 1.2;
-}
-
-/* 抽獎規則提示條 */
-.campaign-rules-banner {
-  background: var(--brand-sand-light);
-  border: 1px solid var(--border-subtle);
-  border-radius: var(--radius-sm);
-  padding: 9px 12px;
-  display: flex;
-  align-items: center;
-  gap: 8px;
-}
-
-.rule-icon {
-  font-size: 1.1rem;
-  flex-shrink: 0;
-}
-
-.rule-text {
-  font-size: 0.72rem;
-  color: var(--brand-mocha);
-  line-height: 1.45;
-}
-
-.rule-text strong {
-  color: #C95E50;
-  font-weight: 800;
-}
-
-/* 海報切換折疊區 */
-.campaign-poster-toggle {
-  display: flex;
-  flex-direction: column;
-  gap: 8px;
-  margin-top: 2px;
-}
-
-.poster-toggle-btn {
+.shop-poster-img-wrap {
   width: 100%;
-  background: #FFFFFF;
-  border: 1px dashed var(--brand-mocha-light);
-  border-radius: var(--radius-sm);
-  color: var(--brand-mocha);
-  padding: 7px 12px;
-  font-size: 0.75rem;
-  font-weight: 700;
-  cursor: pointer;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  gap: 6px;
-  transition: all 0.2s ease;
-}
-
-.poster-toggle-btn:hover {
-  background: #FDF7F4;
-  border-color: var(--brand-rose);
-  color: #C95E50;
-}
-
-.toggle-arrow {
-  font-size: 0.8rem;
-  transition: transform 0.25s ease;
-}
-
-.poster-toggle-btn.active .toggle-arrow {
-  transform: rotate(180deg);
-}
-
-.poster-collapse-box {
-  width: 100%;
-  border-radius: var(--radius-sm);
   overflow: hidden;
-  border: 1.5px solid var(--border-subtle);
-  box-shadow: 0 4px 14px rgba(92, 64, 51, 0.08);
-  animation: fadeInDown 0.25s ease;
+  background: #FAF5F0;
 }
 
-@keyframes fadeInDown {
-  from { opacity: 0; transform: translateY(-8px); }
-  to { opacity: 1; transform: translateY(0); }
-}
-
-.campaign-poster-full {
+.shop-poster-img {
   width: 100%;
   height: auto;
   display: block;
