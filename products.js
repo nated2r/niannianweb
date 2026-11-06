@@ -442,5 +442,6 @@ window.NIAN_PRODUCTS = [
 /* 結帳設定 */
 window.NIAN_CHECKOUT = {
   couponCode: '000349',
-  lineUrl: 'https://lin.ee/P8q4aqd'
+  lineUrl: 'https://lin.ee/P8q4aqd',
+  lineId: '@478ihlka' // 黏黏麻 LINE 官方帳號，用來帶入訂單文字
 };

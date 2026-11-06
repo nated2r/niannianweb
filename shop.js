@@ -411,16 +411,15 @@
       copied = true;
     } catch (err) { copied = false; }
 
-    if (copied) {
-      toast('訂單已複製！到 LINE 貼上送出即可 🐾');
-      window.open(CHECKOUT.lineUrl, '_blank', 'noopener');
-    } else {
-      fallbackText.value = text;
-      fallback.hidden = false;
-      fallbackText.focus();
-      fallbackText.select();
-      toast('請長按複製訂單內容，再貼到 LINE');
-    }
+    /* 直接開啟黏黏麻 LINE 並把訂單文字帶進輸入框，買家只要按送出；同時也複製一份當備用 */
+    const lineLink = CHECKOUT.lineId
+      ? `https://line.me/R/oaMessage/${CHECKOUT.lineId}/?${encodeURIComponent(text)}`
+      : CHECKOUT.lineUrl;
+    if (copied) toast('訂單已帶入 LINE，按「送出」就完成囉 🐾');
+    else toast('正在開啟 LINE，請確認訂單內容後送出 🐾');
+    fallbackText.value = text;
+    fallback.hidden = false;
+    setTimeout(() => { window.location.href = lineLink; }, 600);
   }
 
   /* ---------- 領取折扣碼 → 全站改顯示折扣價 ---------- */

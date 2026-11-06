@@ -464,9 +464,9 @@
         <input class="cart-field" name="carrier" type="text" placeholder="發票載具（手機條碼，例如 /ABC1234，選填）" autocapitalize="characters" autocomplete="off" maxlength="8">
         <textarea class="cart-field" name="note" placeholder="備註（選填）"></textarea>
         <button type="submit" class="cart-submit-btn">送出訂單到 LINE</button>
-        <p class="cart-note">按下後會複製訂單內容並開啟黏黏麻 LINE，貼上送出即完成下單。</p>
+        <p class="cart-note">按下後會開啟黏黏麻 LINE 並自動帶入訂單內容，按「送出」即完成下單。</p>
         <div class="order-fallback" id="orderFallback" hidden>
-          無法自動複製，請全選下方內容後貼到 LINE：
+          若 LINE 裡沒有出現訂單內容，請複製下方文字貼到 LINE：
           <textarea class="cart-field" id="orderFallbackText" readonly></textarea>
         </div>
         <button type="button" class="cart-continue" id="continueShopBtn">繼續選購</button>
