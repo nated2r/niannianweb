@@ -59,6 +59,9 @@
 ├── index.html                   # 單頁雙視圖主結構 (首頁 + 開團專區)
 ├── style.css                    # 品牌統一設計系統樣式表 (暖色調、無邊框輕盈風)
 ├── script.js                    # 視圖路由、折扣碼複製、燈箱互動腳本
+├── products.js                  # 開團商品資料（名稱、方案價、規格）與 LINE 結帳設定，改價格只動這支
+├── shop.js                      # 商品列表、詳情、購物車、訂單複製並送 LINE
+├── shop.css                     # 商品詳情／購物車樣式
 ├── CLAUDE.md                    # 本交接文件 (Claude 讀取入口)
 ├── README.md                    # GitHub 專案說明文件
 └── images/                      # 高畫質品牌視覺資產庫

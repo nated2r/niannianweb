@@ -18,8 +18,9 @@
   <!-- Google Fonts -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=M+PLUS+Rounded+1c:wght@500;700;800&family=Noto+Sans+TC:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+TC:wght@400;500;700;800&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="style.css">
+  <link rel="stylesheet" href="shop.css">
 </head>
 <body>
 
@@ -72,24 +73,44 @@
       <section class="portal-action-section">
         <!-- 雙11限時活動海報 (圖二，點擊可直接進入開團專區搶購) -->
         <div class="event-banner-card" id="eventBannerHome" role="button" tabindex="0" aria-label="雙11寵愛加碼好禮喵喵來，點擊進入開團專區">
-          <div class="event-banner-badge">🔥 雙11寵愛加碼</div>
           <div class="event-banner-img-box">
             <img src="images/event_banner_home.png" alt="雙11寵愛加碼 好禮喵喵來" class="event-banner-img">
-          </div>
-          <div class="event-banner-footer">
-            <span>🎁 滿千送課程・再抽騙水神器！點此進開團專區 ➜</span>
           </div>
         </div>
 
         <!-- 開團區的按鈕大一點 (放在活動底下) -->
         <div class="main-cta-box">
-          <button type="button" class="big-groupbuy-cta" id="openShopBtn">
-            <div class="big-cta-icon">🛍️</div>
-            <div class="big-cta-content">
-              <span class="big-cta-title">進入黏黏麻開團專區 ➜</span>
-              <span class="big-cta-sub">🎁 輸入專屬折扣碼 000349 享限時開團優惠</span>
+          <div class="groupbuy-card">
+            <div class="groupbuy-text">
+              <span class="groupbuy-title">進入黏黏麻開團專區</span>
+              <span class="groupbuy-sub">🎁 輸入專屬折扣碼 000349 享限時開團優惠</span>
             </div>
-          </button>
+            <button type="button" class="groupbuy-paw-btn" id="openShopBtn" aria-label="進入黏黏麻開團專區">
+              <svg viewBox="45 85 540 460" aria-hidden="true">
+                <defs>
+                  <filter id="pawShadow" x="-10%" y="-10%" width="120%" height="130%">
+                    <feDropShadow dx="0" dy="6" stdDeviation="8" flood-color="#B3685D" flood-opacity="0.32"/>
+                  </filter>
+                </defs>
+                <g filter="url(#pawShadow)">
+                  <g fill="#FFFFFF" stroke="#FFFFFF" stroke-width="92" stroke-linejoin="round">
+                  <ellipse cx="155" cy="300" rx="50" ry="70"/>
+                  <ellipse cx="255" cy="210" rx="50" ry="70"/>
+                  <ellipse cx="375" cy="210" rx="50" ry="70"/>
+                  <ellipse cx="475" cy="300" rx="50" ry="70"/>
+                  <path d="M214 408 C188 436 196 484 252 490 C292 494 330 472 370 490 C416 496 436 440 406 402 C386 374 366 360 350 336 C334 308 290 308 270 336 C254 358 236 386 214 408 Z"/>
+                  </g>
+                </g>
+                <g fill="#F4B4B4">
+                  <ellipse cx="155" cy="300" rx="50" ry="70"/>
+                  <ellipse cx="255" cy="210" rx="50" ry="70"/>
+                  <ellipse cx="375" cy="210" rx="50" ry="70"/>
+                  <ellipse cx="475" cy="300" rx="50" ry="70"/>
+                  <path d="M214 408 C188 436 196 484 252 490 C292 494 330 472 370 490 C416 496 436 440 406 402 C386 374 366 360 350 336 C334 308 290 308 270 336 C254 358 236 386 214 408 Z"/>
+                </g>
+              </svg>
+            </button>
+          </div>
         </div>
 
         <!-- 官方傳送門小貓爪 (已拉掉 IG 廣播區，共 3 個精緻小貓爪) -->
@@ -221,7 +242,7 @@
       <!-- 首頁頁尾 -->
       <footer class="site-footer">
         <button id="shareBtn" class="share-page-btn" aria-label="分享此頁面">
-          <span>📤 分享黏黏的專屬小天地</span>
+          <span>分享黏黏的專屬小天地</span>
         </button>
         <div class="footer-brand-card">
           <img src="images/brand_logo.png" alt="逸安國際商行商標" class="footer-brand-logo">
@@ -264,7 +285,7 @@
           <div class="model-cat-intro">
             <h2 class="shop-hero-title">黏黏麻開團專區</h2>
             <p class="shop-hero-desc">
-              「這些都是麻麻親自幫我挑選把關的超級好物！<strong>點擊商品圖片</strong>即可直接前往官方特惠頁搶購喔🐾」
+              「這些都是麻麻親自幫我挑選把關的超級好物！<strong>點擊商品</strong>選好方案、加入購物車，直接在這裡下單喔🐾」
             </p>
             <div class="shop-guarantee-tags">
               <span>✨ 官方正貨保證</span>
@@ -278,7 +299,6 @@
       <!-- 雙11開團專區加碼活動海報 (圖三) -->
       <section class="shop-campaign-section">
         <div class="shop-poster-card">
-          <div class="shop-poster-badge">🔥 雙11限定加碼活動</div>
           <div class="shop-poster-img-wrap">
             <img src="images/event_poster_shop.jpg" alt="雙11寵愛加碼 好禮喵喵來活動海報" class="shop-poster-img" loading="lazy">
           </div>
@@ -359,218 +379,7 @@
 
       <!-- 開團商品列表：一行兩個、同品項放一起、格子一樣大 -->
       <section class="shop-products-section">
-        <div class="products-grid">
-
-          <!-- 第 1 組（機能高端餐系列 - 同品項放一起） -->
-          <!-- 商品 1: 機能高端餐 1.15kg -->
-          <article class="product-card">
-            <a href="https://reseller.luckycat.life/onestepshop/pd/Y_2BpBNllo3uuYy9dpupG_2F2zaED9KcdR6DRxoNXTLIFgIIUrzczf8lUB09uRW_2BE6N_2BKNbXbtCg1mmLEh_2B6NYWCF54g4YcnauYCB_2BsvFkJ0MyFpEyrd5ijBw14J9GF2RTmA" 
-               target="_blank" 
-               rel="noopener noreferrer" 
-               class="product-image-link" 
-               title="點擊圖片前往購買 機能高端餐 1.15kg">
-              <img src="images/products/food_1150g.jpg" alt="機能高端餐 1.15kg" class="product-img" loading="lazy">
-              <div class="image-hover-hint">
-                <span>🛒 點擊購買</span>
-              </div>
-              <span class="product-badge-flag hot-flag">👑 黏黏同款</span>
-            </a>
-            <div class="product-info">
-              <div class="product-sub-brand">營養師毛小孩</div>
-              <h3 class="product-name">
-                <a href="https://reseller.luckycat.life/onestepshop/pd/Y_2BpBNllo3uuYy9dpupG_2F2zaED9KcdR6DRxoNXTLIFgIIUrzczf8lUB09uRW_2BE6N_2BKNbXbtCg1mmLEh_2B6NYWCF54g4YcnauYCB_2BsvFkJ0MyFpEyrd5ijBw14J9GF2RTmA" 
-                   target="_blank" 
-                   rel="noopener noreferrer">機能高端餐 1.15kg</a>
-              </h3>
-              <p class="product-intro">原肉凍乾添加！黏黏守護大包裝，高肉量營養均衡，超值囤糧首選。</p>
-              <div class="product-tags">
-                <span>原肉凍乾</span>
-                <span>1.15kg超值</span>
-              </div>
-            </div>
-            <a href="https://reseller.luckycat.life/onestepshop/pd/Y_2BpBNllo3uuYy9dpupG_2F2zaED9KcdR6DRxoNXTLIFgIIUrzczf8lUB09uRW_2BE6N_2BKNbXbtCg1mmLEh_2B6NYWCF54g4YcnauYCB_2BsvFkJ0MyFpEyrd5ijBw14J9GF2RTmA" 
-               target="_blank" 
-               rel="noopener noreferrer" 
-               class="product-action-btn">
-              <span>前往選購 ➜</span>
-            </a>
-          </article>
-
-          <!-- 商品 2: 機能高端餐 500g -->
-          <article class="product-card">
-            <a href="https://reseller.luckycat.life/onestepshop/pd/Y_2BpBNllo3uuYy9dpupG_2F27YARqDeqBNH_2Birze8vMyiby5LJVoE2hT_2Bi4QPDUHcb1cYKjKWCVBE2_2B9hagj15ugIRREAGgbmVZ8aGT9OPOpLeKQ8dxU3iV5_2FxwKgJvpZ4q" 
-               target="_blank" 
-               rel="noopener noreferrer" 
-               class="product-image-link" 
-               title="點擊圖片前往購買 機能高端餐 500g">
-              <img src="images/products/food_500g.jpg" alt="機能高端餐 500g" class="product-img" loading="lazy">
-              <div class="image-hover-hint">
-                <span>🛒 點擊購買</span>
-              </div>
-              <span class="product-badge-flag">嘗鮮小包</span>
-            </a>
-            <div class="product-info">
-              <div class="product-sub-brand">營養師毛小孩</div>
-              <h3 class="product-name">
-                <a href="https://reseller.luckycat.life/onestepshop/pd/Y_2BpBNllo3uuYy9dpupG_2F27YARqDeqBNH_2Birze8vMyiby5LJVoE2hT_2Bi4QPDUHcb1cYKjKWCVBE2_2B9hagj15ugIRREAGgbmVZ8aGT9OPOpLeKQ8dxU3iV5_2FxwKgJvpZ4q" 
-                   target="_blank" 
-                   rel="noopener noreferrer">機能高端餐 500g</a>
-              </h3>
-              <p class="product-intro">頂級凍乾饗宴嘗鮮首選！適口性絕佳挑嘴必備，小包裝極致保鮮。</p>
-              <div class="product-tags">
-                <span>原肉凍乾</span>
-                <span>500g小包</span>
-              </div>
-            </div>
-            <a href="https://reseller.luckycat.life/onestepshop/pd/Y_2BpBNllo3uuYy9dpupG_2F27YARqDeqBNH_2Birze8vMyiby5LJVoE2hT_2Bi4QPDUHcb1cYKjKWCVBE2_2B9hagj15ugIRREAGgbmVZ8aGT9OPOpLeKQ8dxU3iV5_2FxwKgJvpZ4q" 
-               target="_blank" 
-               rel="noopener noreferrer" 
-               class="product-action-btn">
-              <span>前往選購 ➜</span>
-            </a>
-          </article>
-
-
-          <!-- 第 2 組（寵物噴霧系列 - 同品項放一起） -->
-          <!-- 商品 3: 寵物噴霧大瓶 100ml -->
-          <article class="product-card">
-            <a href="https://reseller.luckycat.life/onestepshop/pd/Y_2BpBNllo3uuYy9dpupG_2F29YeV5AdWaxfG7YiHwS6D2pwNvpjQX4l_2FNkeST2gAwzdzctJfOP_2BKUN89a_2BFtqnr0fnCtNpb5lzIDEfRbL8nXf8A_2BZ6mmiPNatRGqUQCStyt" 
-               target="_blank" 
-               rel="noopener noreferrer" 
-               class="product-image-link" 
-               title="點擊圖片前往購買 寵物噴霧 100ml">
-              <img src="images/products/spray_100ml.png" alt="寵物皮麗舒噴霧 100ml" class="product-img" loading="lazy">
-              <div class="image-hover-hint">
-                <span>🛒 點擊購買</span>
-              </div>
-              <span class="product-badge-flag">居家常備</span>
-            </a>
-            <div class="product-info">
-              <div class="product-sub-brand">AMDS 微量元素</div>
-              <h3 class="product-name">
-                <a href="https://reseller.luckycat.life/onestepshop/pd/Y_2BpBNllo3uuYy9dpupG_2F29YeV5AdWaxfG7YiHwS6D2pwNvpjQX4l_2FNkeST2gAwzdzctJfOP_2BKUN89a_2BFtqnr0fnCtNpb5lzIDEfRbL8nXf8A_2BZ6mmiPNatRGqUQCStyt" 
-                   target="_blank" 
-                   rel="noopener noreferrer">寵物噴霧大瓶 100ml</a>
-              </h3>
-              <p class="product-intro">9大全球專利，終結頭套噩夢！不含藥物成分，日常舒緩修護常備款。</p>
-              <div class="product-tags">
-                <span>無藥成分</span>
-                <span>100ml大瓶</span>
-              </div>
-            </div>
-            <a href="https://reseller.luckycat.life/onestepshop/pd/Y_2BpBNllo3uuYy9dpupG_2F29YeV5AdWaxfG7YiHwS6D2pwNvpjQX4l_2FNkeST2gAwzdzctJfOP_2BKUN89a_2BFtqnr0fnCtNpb5lzIDEfRbL8nXf8A_2BZ6mmiPNatRGqUQCStyt" 
-               target="_blank" 
-               rel="noopener noreferrer" 
-               class="product-action-btn">
-              <span>前往選購 ➜</span>
-            </a>
-          </article>
-
-          <!-- 商品 4: 寵物噴霧小瓶 20ml -->
-          <article class="product-card">
-            <a href="https://reseller.luckycat.life/onestepshop/pd/Y_2BpBNllo3uuYy9dpupG_2F2_2BIr4_2Fwxc6iORZrRqelaZq2XNkW35FKtsn9_2FuOaC9L0Qux_2BsEYFvNH1gqDgsmXJ59PQNqqYNiDrg_2FWtFEtSrjHFBu4jKKXapumJ2BiAudPJl" 
-               target="_blank" 
-               rel="noopener noreferrer" 
-               class="product-image-link" 
-               title="點擊圖片前往購買 寵物噴霧小瓶 20ml">
-              <img src="images/products/spray_20ml.png" alt="寵物皮麗舒噴霧 20ml 隨身瓶" class="product-img" loading="lazy">
-              <div class="image-hover-hint">
-                <span>🛒 點擊購買</span>
-              </div>
-              <span class="product-badge-flag">隨身攜帶</span>
-            </a>
-            <div class="product-info">
-              <div class="product-sub-brand">AMDS 微量元素</div>
-              <h3 class="product-name">
-                <a href="https://reseller.luckycat.life/onestepshop/pd/Y_2BpBNllo3uuYy9dpupG_2F2_2BIr4_2Fwxc6iORZrRqelaZq2XNkW35FKtsn9_2FuOaC9L0Qux_2BsEYFvNH1gqDgsmXJ59PQNqqYNiDrg_2FWtFEtSrjHFBu4jKKXapumJ2BiAudPJl" 
-                   target="_blank" 
-                   rel="noopener noreferrer">寵物噴霧小瓶 20ml</a>
-              </h3>
-              <p class="product-intro">極致輕盈隨身瓶！外出看醫生、散步、旅行放包包隨手噴，舒緩保護。</p>
-              <div class="product-tags">
-                <span>便攜隨身</span>
-                <span>20ml</span>
-              </div>
-            </div>
-            <a href="https://reseller.luckycat.life/onestepshop/pd/Y_2BpBNllo3uuYy9dpupG_2F2_2BIr4_2Fwxc6iORZrRqelaZq2XNkW35FKtsn9_2FuOaC9L0Qux_2BsEYFvNH1gqDgsmXJ59PQNqqYNiDrg_2FWtFEtSrjHFBu4jKKXapumJ2BiAudPJl" 
-               target="_blank" 
-               rel="noopener noreferrer" 
-               class="product-action-btn">
-              <span>前往選購 ➜</span>
-            </a>
-          </article>
-
-
-          <!-- 第 3 組（保健與清潔系列） -->
-          <!-- 商品 5: 藍藻益生菌（五效合一） -->
-          <article class="product-card">
-            <a href="https://reseller.luckycat.life/onestepshop/pd/m_2B3xQZ6mb9Ykkeh8tdboemhX9igjGhkp_2BDhKwix8LQIzCTk6QAYjWdkVrzDynUaFUC1FYBMU4CdKTG8Bl8ZWohIvHk7qCdq6oTwIg7WkmoRXM0d03fJlUu62RXWPlN1k" 
-               target="_blank" 
-               rel="noopener noreferrer" 
-               class="product-image-link" 
-               title="點擊圖片前往購買 藍藻益生菌（五效合一）">
-              <img src="images/products/probiotics_nian.jpg" alt="藍藻益生菌膠囊 黏黏代言實拍" class="product-img" loading="lazy">
-              <div class="image-hover-hint">
-                <span>🛒 點擊購買</span>
-              </div>
-              <span class="product-badge-flag hot-flag">👑 黏黏實拍</span>
-            </a>
-            <div class="product-info">
-              <div class="product-sub-brand">NutriMin</div>
-              <h3 class="product-name">
-                <a href="https://reseller.luckycat.life/onestepshop/pd/m_2B3xQZ6mb9Ykkeh8tdboemhX9igjGhkp_2BDhKwix8LQIzCTk6QAYjWdkVrzDynUaFUC1FYBMU4CdKTG8Bl8ZWohIvHk7qCdq6oTwIg7WkmoRXM0d03fJlUu62RXWPlN1k" 
-                   target="_blank" 
-                   rel="noopener noreferrer">藍藻益生菌（五效合一）</a>
-              </h3>
-              <p class="product-intro">黏黏親自實拍代言！熟齡營養、腸胃排便、體態管理五效合一好法寶。</p>
-              <div class="product-tags">
-                <span>五效合一</span>
-                <span>30顆/瓶</span>
-              </div>
-            </div>
-            <a href="https://reseller.luckycat.life/onestepshop/pd/m_2B3xQZ6mb9Ykkeh8tdboemhX9igjGhkp_2BDhKwix8LQIzCTk6QAYjWdkVrzDynUaFUC1FYBMU4CdKTG8Bl8ZWohIvHk7qCdq6oTwIg7WkmoRXM0d03fJlUu62RXWPlN1k" 
-               target="_blank" 
-               rel="noopener noreferrer" 
-               class="product-action-btn">
-              <span>前往選購 ➜</span>
-            </a>
-          </article>
-
-          <!-- 商品 6: 抗菌濕式衛生紙 80抽（寵物友善） -->
-          <article class="product-card">
-            <a href="https://reseller.luckycat.life/onestepshop/pd/Y_2BpBNllo3uuYy9dpupG_2F2_2Fe4V4voE_2FPSxlOeUxDI1HCxYbwVmFBsoMMcvVJZNWGejZgPr1t_2FhjYtEcrPFEpFIDbaD_2FAiDB0iVr2cBq6CyWZG0BVb8GbXTuUc51Ywu9Ri" 
-               target="_blank" 
-               rel="noopener noreferrer" 
-               class="product-image-link" 
-               title="點擊圖片前往購買 抗菌濕式衛生紙80抽">
-              <img src="images/products/wipes_80.jpg" alt="抗菌濕式衛生紙 80抽" class="product-img" loading="lazy">
-              <div class="image-hover-hint">
-                <span>🛒 點擊購買</span>
-              </div>
-              <span class="product-badge-flag">溫柔親膚</span>
-            </a>
-            <div class="product-info">
-              <div class="product-sub-brand">Platinm 白金盾</div>
-              <h3 class="product-name">
-                <a href="https://reseller.luckycat.life/onestepshop/pd/Y_2BpBNllo3uuYy9dpupG_2F2_2Fe4V4voE_2FPSxlOeUxDI1HCxYbwVmFBsoMMcvVJZNWGejZgPr1t_2FhjYtEcrPFEpFIDbaD_2FAiDB0iVr2cBq6CyWZG0BVb8GbXTuUc51Ywu9Ri" 
-                   target="_blank" 
-                   rel="noopener noreferrer">抗菌濕式衛生紙 80抽</a>
-              </h3>
-              <p class="product-intro">抑制 99.9% 細菌！專為毛孩肌膚打造，擦手擦腳擦屁屁超安心，加厚柔韌。</p>
-              <div class="product-tags">
-                <span>寵物友善</span>
-                <span>80抽厚型</span>
-              </div>
-            </div>
-            <a href="https://reseller.luckycat.life/onestepshop/pd/Y_2BpBNllo3uuYy9dpupG_2F2_2Fe4V4voE_2FPSxlOeUxDI1HCxYbwVmFBsoMMcvVJZNWGejZgPr1t_2FhjYtEcrPFEpFIDbaD_2FAiDB0iVr2cBq6CyWZG0BVb8GbXTuUc51Ywu9Ri" 
-               target="_blank" 
-               rel="noopener noreferrer" 
-               class="product-action-btn">
-              <span>前往選購 ➜</span>
-            </a>
-          </article>
-
-        </div>
+        <div class="products-grid" id="productsGrid"></div>
       </section>
 
       <!-- 專區頁尾 -->
@@ -620,10 +429,57 @@
     </div>
   </div>
 
+  <!-- 購物車按鈕 (僅開團專區顯示) -->
+  <button type="button" class="cart-fab" id="cartFab" aria-label="開啟購物車">
+    🛒<span class="cart-fab-count" id="cartFabCount" style="display:none">0</span>
+  </button>
+
+  <!-- 商品詳情 -->
+  <div class="overlay" id="productSheet" aria-hidden="true">
+    <div class="overlay-backdrop" data-close-sheet></div>
+    <div class="sheet-panel" role="dialog" aria-modal="true" aria-label="商品詳情">
+      <button type="button" class="sheet-close" data-close-sheet aria-label="關閉">✕</button>
+      <div id="productSheetBody"></div>
+    </div>
+  </div>
+
+  <!-- 購物車 -->
+  <div class="overlay" id="cartDrawer" aria-hidden="true">
+    <div class="overlay-backdrop" data-close-cart></div>
+    <div class="sheet-panel" role="dialog" aria-modal="true" aria-label="購物車">
+      <button type="button" class="sheet-close" data-close-cart aria-label="關閉">✕</button>
+      <div class="cart-head">🛒 我的購物車</div>
+      <div class="cart-empty" id="cartEmpty" hidden>
+        <p>購物車還是空的喔，去挑幾樣黏黏愛用的好物吧 🐾</p>
+        <button type="button" class="cart-ghost-btn" id="cartEmptyBtn">繼續逛逛</button>
+      </div>
+      <ul class="cart-items" id="cartItems"></ul>
+      <form class="cart-checkout" id="cartCheckout" hidden novalidate>
+        <div class="cart-total-row"><span>商品合計</span><strong id="cartTotal">$0</strong></div>
+        <div class="cart-lottery" id="cartLottery"></div>
+        <p class="cart-note">方案價已含運費。領取黏黏麻折扣碼後會顯示折扣價。</p>
+        <input class="cart-field" name="name" type="text" placeholder="收件人姓名" autocomplete="name" required>
+        <input class="cart-field" name="phone" type="tel" placeholder="聯絡電話" autocomplete="tel" required>
+        <input class="cart-field" name="address" type="text" placeholder="收件地址" autocomplete="street-address" required>
+        <input class="cart-field" name="carrier" type="text" placeholder="發票載具（手機條碼，例如 /ABC1234，選填）" autocapitalize="characters" autocomplete="off" maxlength="8">
+        <textarea class="cart-field" name="note" placeholder="備註（選填）"></textarea>
+        <button type="submit" class="cart-submit-btn">送出訂單到 LINE</button>
+        <p class="cart-note">按下後會複製訂單內容並開啟黏黏麻 LINE，貼上送出即完成下單。</p>
+        <div class="order-fallback" id="orderFallback" hidden>
+          無法自動複製，請全選下方內容後貼到 LINE：
+          <textarea class="cart-field" id="orderFallbackText" readonly></textarea>
+        </div>
+        <button type="button" class="cart-continue" id="continueShopBtn">繼續選購</button>
+      </form>
+    </div>
+  </div>
+
   <!-- Toast Notification -->
   <div class="toast-message" id="toastMessage">已複製網頁連結！</div>
 
   <!-- JavaScript -->
+  <script src="products.js"></script>
   <script src="script.js"></script>
+  <script src="shop.js"></script>
 </body>
 </html>

@@ -40,7 +40,7 @@
   --radius-full: 9999px;
   
   --font-base: 'Noto Sans TC', -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
-  --font-round: 'M PLUS Rounded 1c', 'Noto Sans TC', sans-serif;
+  --font-round: var(--font-base);
 }
 
 /* 基礎重置與排版設定 */
@@ -1072,7 +1072,8 @@ body {
 }
 
 .code-val {
-  font-family: 'Courier New', Courier, monospace;
+  font-family: var(--font-base);
+  font-variant-numeric: tabular-nums;
   font-size: 1.35rem;
   font-weight: 900;
   color: var(--brand-mocha);
@@ -1725,3 +1726,204 @@ body {
   0% { transform: translate(0, 0) scale(0.5); opacity: 1; }
   100% { transform: translate(var(--dx), -85px) scale(1.2) rotate(var(--rot)); opacity: 0; }
 }
+
+/* ==========================================================================
+   統一按鈕風格：乾燥玫瑰底 #C88277 + 可可棕字 #543D31
+   ========================================================================== */
+.big-groupbuy-cta,
+.claim-coupon-trigger,
+.copy-coupon-btn,
+.back-home-btn,
+.cat-paw-pill,
+.highlight-action-btn,
+.btn-food,
+.btn-spirulina,
+.product-action-btn,
+.back-home-bottom-btn,
+.share-page-btn {
+  background: var(--brand-rose);
+  color: #FFFFFF;
+  border: none;
+  box-shadow: 0 3px 12px rgba(200, 130, 119, 0.22);
+}
+
+.big-groupbuy-cta:hover,
+.claim-coupon-trigger:hover,
+.copy-coupon-btn:hover,
+.back-home-btn:hover,
+.cat-paw-pill:hover,
+.highlight-action-btn:hover,
+.product-card:hover .product-action-btn,
+.back-home-bottom-btn:hover,
+.share-page-btn:hover {
+  background: var(--brand-rose-deep);
+  color: #FFFFFF;
+  box-shadow: 0 5px 16px rgba(200, 130, 119, 0.32);
+}
+
+.big-cta-title,
+.big-cta-sub,
+.coupon-trigger-text,
+.highlight-btn-label,
+.highlight-btn-sub {
+  color: #FFFFFF;
+}
+
+.copy-coupon-btn.copied {
+  background: var(--brand-rose);
+  color: #FFFFFF;
+}
+
+.product-action-btn {
+  box-shadow: none;
+}
+
+/* 首頁開團入口：文字 + 貓掌按鈕 */
+.groupbuy-card {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 12px;
+  background: var(--card-bg);
+  border: none;
+  border-radius: var(--radius-md);
+  padding: 14px 16px 14px 20px;
+  box-shadow: 0 4px 22px rgba(84, 61, 49, 0.05);
+}
+
+.groupbuy-text {
+  display: flex;
+  flex-direction: column;
+  gap: 3px;
+  min-width: 0;
+}
+
+.groupbuy-title {
+  font-family: var(--font-round);
+  font-size: 1.05rem;
+  font-weight: 800;
+  color: var(--brand-mocha);
+}
+
+.groupbuy-sub {
+  font-size: 0.74rem;
+  color: var(--brand-mocha);
+  opacity: 0.75;
+}
+
+.groupbuy-paw-btn {
+  flex-shrink: 0;
+  width: 46px;
+  height: 46px;
+  border: none;
+  border-radius: 50%;
+  background: var(--brand-rose);
+  color: #FFFFFF;
+  font-size: 1.35rem;
+  cursor: pointer;
+  box-shadow: 0 3px 12px rgba(200, 130, 119, 0.3);
+  transition: all 0.2s ease;
+}
+
+.groupbuy-paw-btn:hover {
+  background: var(--brand-rose-deep);
+  transform: translateY(-2px) scale(1.05);
+}
+
+/* 貓掌按鈕：白底粉色肉球 */
+.groupbuy-paw-btn {
+  width: 58px;
+  height: 58px;
+  padding: 0;
+  background: #FFFFFF;
+  box-shadow: 0 3px 14px rgba(200, 130, 119, 0.35);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.groupbuy-paw-btn svg {
+  width: 34px;
+  height: 34px;
+}
+
+.groupbuy-paw-btn:hover {
+  background: #FBF2EF;
+}
+
+/* 貓掌入口：直接是貓掌外型（白色掌形 + 粉色肉球），不加圓底 */
+.groupbuy-card {
+  background: var(--brand-rose-soft);
+}
+
+.groupbuy-paw-btn {
+  width: 64px;
+  height: 64px;
+  border-radius: 0;
+  background: transparent;
+  box-shadow: none;
+  filter: drop-shadow(0 3px 6px rgba(179, 104, 93, 0.38));
+}
+
+.groupbuy-paw-btn svg {
+  width: 100%;
+  height: 100%;
+}
+
+.groupbuy-paw-btn:hover {
+  background: transparent;
+  transform: translateY(-2px) rotate(-8deg) scale(1.06);
+  filter: drop-shadow(0 5px 9px rgba(179, 104, 93, 0.5));
+}
+
+/* 其他按鈕：文字前加上白色小貓掌 */
+.back-home-btn::before,
+.copy-coupon-btn::before,
+.back-home-bottom-btn::before,
+.share-page-btn::before,
+.product-action-btn::before,
+.claim-coupon-trigger::before {
+  content: "";
+  display: inline-block;
+  width: 1.15em;
+  height: 1.15em;
+  margin-right: 6px;
+  flex-shrink: 0;
+  background: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64' fill='%23FFFFFF'%3E%3Cellipse cx='32' cy='42' rx='16' ry='13'/%3E%3Cellipse cx='11' cy='29' rx='7' ry='9' transform='rotate(-20 11 29)'/%3E%3Cellipse cx='25' cy='12' rx='7' ry='9.5' transform='rotate(-6 25 12)'/%3E%3Cellipse cx='39' cy='12' rx='7' ry='9.5' transform='rotate(6 39 12)'/%3E%3Cellipse cx='53' cy='29' rx='7' ry='9' transform='rotate(20 53 29)'/%3E%3C/svg%3E") center / contain no-repeat;
+}
+
+.back-home-btn svg,
+.copy-coupon-btn svg,
+.coupon-gift-icon {
+  display: none;
+}
+
+.back-home-bottom-btn {
+  display: inline-flex;
+  align-items: center;
+}
+
+.product-action-btn::before {
+  margin-right: 5px;
+}
+
+/* 全站統一字型：按鈕、輸入框一律繼承 Noto Sans TC */
+button, input, textarea, select {
+  font-family: var(--font-base);
+}
+
+/* 擬真毛茸茸貓掌 */
+.groupbuy-paw-btn {
+  width: 70px;
+  height: 78px;
+  filter: drop-shadow(0 4px 8px rgba(120, 85, 65, 0.28));
+}
+
+/* 首頁貓掌：白色掌形＋粉色肉球（透明背景） */
+.groupbuy-paw-btn {
+  width: 84px;
+  height: 72px;
+  filter: none;
+}
+.groupbuy-paw-btn:hover { filter: none; }
+.groupbuy-paw-btn svg { width: 100%; height: 100%; overflow: visible; }
