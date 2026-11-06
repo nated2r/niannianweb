@@ -82,6 +82,23 @@ document.addEventListener('DOMContentLoaded', () => {
   }
 
   // ==============================================================
+  // 1.5. 活動海報展開/收起切換
+  // ==============================================================
+  const togglePosterBtn = document.getElementById('togglePosterBtn');
+  const posterCollapseBox = document.getElementById('posterCollapseBox');
+  if (togglePosterBtn && posterCollapseBox) {
+    togglePosterBtn.addEventListener('click', () => {
+      const isHidden = posterCollapseBox.style.display === 'none' || posterCollapseBox.style.display === '';
+      posterCollapseBox.style.display = isHidden ? 'block' : 'none';
+      togglePosterBtn.classList.toggle('active', isHidden);
+      const textSpan = togglePosterBtn.querySelector('.toggle-text');
+      if (textSpan) {
+        textSpan.textContent = isHidden ? '收起完整活動海報圖' : '查看完整活動海報圖';
+      }
+    });
+  }
+
+  // ==============================================================
   // 2. 領取黏黏麻專屬折扣碼互動 (Claim & Copy Coupon Code)
   // ==============================================================
   const claimCouponBtn = document.getElementById('claimCouponBtn');
