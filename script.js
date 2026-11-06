@@ -9,6 +9,7 @@ document.addEventListener('DOMContentLoaded', () => {
   const homeView = document.getElementById('homeView');
   const shopView = document.getElementById('shopView');
   const openShopBtn = document.getElementById('openShopBtn');
+  const eventBannerHome = document.getElementById('eventBannerHome');
   const backHomeBtn = document.getElementById('backHomeBtn');
   const bottomBackHomeBtn = document.getElementById('bottomBackHomeBtn');
 
@@ -38,6 +39,19 @@ document.addEventListener('DOMContentLoaded', () => {
     openShopBtn.addEventListener('click', (e) => {
       e.preventDefault();
       showShopView();
+    });
+  }
+
+  if (eventBannerHome) {
+    eventBannerHome.addEventListener('click', (e) => {
+      e.preventDefault();
+      showShopView();
+    });
+    eventBannerHome.addEventListener('keydown', (e) => {
+      if (e.key === 'Enter' || e.key === ' ') {
+        e.preventDefault();
+        showShopView();
+      }
     });
   }
 
