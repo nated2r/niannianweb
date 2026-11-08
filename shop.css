@@ -564,3 +564,13 @@ textarea.cart-field { resize: vertical; min-height: 60px; }
 .page-view.cat-mode .shop-header-banner,
 .page-view.cat-mode .shop-campaign-section,
 .page-view.cat-mode .highlights-section { display: none; }
+
+/* 抽獎券提醒：字放大、更醒目 */
+.cart-lottery {
+  font-size: 1.05rem;
+  line-height: 1.6;
+  font-weight: 700;
+  padding: 13px 14px;
+  text-align: center;
+}
+.cart-lottery strong { font-size: 1.3rem; font-weight: 800; }

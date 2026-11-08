@@ -1967,3 +1967,27 @@ button.groupbuy-card:hover .groupbuy-paw-btn { transform: rotate(-8deg) scale(1.
 .model-cat-intro { padding: 0; }
 .model-cat-intro .shop-hero-desc { margin-bottom: 0; }
 .model-cat-intro .shop-hero-title { margin-bottom: 6px; }
+
+/* 首頁頂部：頭像在左、文字在右 */
+.hero-card {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  text-align: left;
+  padding: 22px 18px 18px;
+}
+.hero-card .avatar-wrapper { flex: 0 0 auto; width: 84px; height: 84px; margin: 0; }
+.hero-card .cat-name {
+  margin: 0;
+  font-size: 1.28rem;
+  line-height: 1.45;
+  letter-spacing: 0.5px;
+}
+.hero-card .cat-name .cn-sep { color: var(--brand-rose); font-weight: 700; }
+.hero-card .cat-name .cn-b { color: var(--brand-mocha-light); font-weight: 800; }
+
+/* 逸安國際商行資訊：移到頁面最底部 */
+.footer-brand { display: flex; flex-direction: column; align-items: center; gap: 8px; margin-top: 6px; }
+.footer-operator { font-size: 0.74rem; color: var(--text-muted); letter-spacing: 0.5px; }
+.hero-card .cat-name .cn-a, .hero-card .cat-name .cn-sep, .hero-card .cat-name .cn-b { white-space: nowrap; }
+.hero-card .cat-name .cn-b { display: block; font-size: 1.02rem; margin-top: 2px; }
