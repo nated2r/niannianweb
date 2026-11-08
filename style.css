@@ -1960,3 +1960,10 @@ button.groupbuy-card:hover .groupbuy-paw-btn { transform: rotate(-8deg) scale(1.
 /* 黏黏名片：只留頭像與名字，縮小留白 */
 .hero-card { padding: 22px 20px 14px; }
 .hero-card .cat-name { margin-bottom: 0; }
+
+/* 開團專區標題卡：只留標題與說明文字 */
+.shop-header-banner { padding: 16px 18px; }
+.model-cat-card { display: block; text-align: center; padding: 0; }
+.model-cat-intro { padding: 0; }
+.model-cat-intro .shop-hero-desc { margin-bottom: 0; }
+.model-cat-intro .shop-hero-title { margin-bottom: 6px; }

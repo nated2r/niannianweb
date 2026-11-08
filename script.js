@@ -70,14 +70,14 @@ document.addEventListener('DOMContentLoaded', () => {
   }
 
   window.addEventListener('popstate', () => {
-    if (window.location.hash === '#shop') {
+    if (window.location.hash.indexOf('#shop') === 0) {
       showShopView(false);
     } else {
       showHomeView(false);
     }
   });
 
-  if (window.location.hash === '#shop') {
+  if (window.location.hash.indexOf('#shop') === 0) {
     showShopView(false);
   }
 

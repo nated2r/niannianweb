@@ -6,6 +6,7 @@
   'use strict';
 
   const PRODUCTS = window.NIAN_PRODUCTS || [];
+  const CATS = window.NIAN_CATEGORIES || { groups: [], subs: [] };
   const CHECKOUT = window.NIAN_CHECKOUT || {};
   const STORAGE_KEY = 'nian_cart_v3';
   const COUPON_KEY = 'nian_coupon_v1';
@@ -30,7 +31,16 @@
     }
   } catch (err) { cart = []; }
 
+  /* 加價購商品：購物車裡沒有搭配的主商品時，自動移除，避免單買 */
+  const requirementMet = (p) => !p.requires || cart.some((e) => p.requires.indexOf(e.id) >= 0);
+  function pruneCart() {
+    const before = cart.length;
+    cart = cart.filter((e) => requirementMet(findProduct(e.id)));
+    if (cart.length !== before) toast('加價購商品已移除，因為購物車裡沒有搭配的主商品 🐾');
+  }
+
   function saveCart() {
+    pruneCart();
     try { localStorage.setItem(STORAGE_KEY, JSON.stringify(cart)); } catch (e) { /* 忽略 */ }
   }
 
@@ -44,6 +54,10 @@
   const priceHtml = (pl) => (pl.couponOnly ? `<span class="price-now">${money(pl.couponPrice)}</span>` : hasCoupon(pl)
     ? `<s class="price-old">${money(pl.price)}</s> <span class="price-now">${money(pl.couponPrice)}</span>`
     : money(pl.price));
+
+  const gcd = (a, b) => (b ? gcd(b, a % b) : a);
+  /* 商品的最小購買單位（例如只賣 2 管、4 管…，每次加減就是 2） */
+  const stepOf = (p) => p.plans.reduce((g, pl) => gcd(g, pl.qty), 0) || 1;
 
   /* 組合最優惠：把 units 個商品拆成方案組合（例如 2 包就用「2 包」方案價），取總價最低的湊法 */
   function plansFor(p, coupon) {
@@ -69,6 +83,11 @@
           pick[n] = pl;
         }
       });
+    }
+    // 湊不出來的數量（例如商品只賣 2 管一組，卻有 1 管）：改用最便宜的單價估算，避免出錯
+    if (!isFinite(cost[units])) {
+      const unit = Math.min.apply(null, plans.map((pl) => pl.price / pl.qty));
+      return { total: Math.ceil(unit * units), combo: [] };
     }
     const combo = {};
     for (let n = units; n > 0; n -= pick[n].qty) {
@@ -100,10 +119,9 @@
   }
 
   /* ---------- 商品列表 ---------- */
-  const GROUPS = [
-    { key: 'pet', title: '🐾 毛孩好物', sub: '黏黏同款，毛孩的日常照顧' },
-    { key: 'human', title: '🌿 飼主專屬', sub: '照顧毛孩的人，也要顧好自己' }
-  ];
+  /* 目前選擇的分類：大分類（all／pet／human）與子分類（all／eat／use／apply） */
+  let filterGroup = 'all';
+  let filterSub = 'all';
 
   function cardHtml(p) {
     const min = Math.min.apply(null, visiblePlans(p).map((x) => priceOf(x.pl) / x.pl.qty));
@@ -126,15 +144,87 @@
         </article>`;
   }
 
+  const groupOf = (p) => p.group || 'pet';
+  const inGroup = (p) => filterGroup === 'all' || groupOf(p) === filterGroup;
+
+  function renderFilter() {
+    const box = document.getElementById('shopFilter');
+    if (!box) return;
+    const groupTabs = [{ key: 'all', title: '全部', icon: '🛍️' }].concat(CATS.groups).map((g) =>
+      `<button type="button" class="filter-tab${g.key === filterGroup ? ' active' : ''}" data-fg="${g.key}">${g.icon || ''} ${esc(g.title)}</button>`).join('');
+    // 子分類跟著大分類走：選了「毛孩好物」或「麻麻專屬」才出現，只列出真的有商品的項目
+    const cur = CATS.groups.find((g) => g.key === filterGroup);
+    const subs = cur ? (cur.subs || []).filter((s) => PRODUCTS.some((p) => groupOf(p) === cur.key && p.sub === s.key)) : [];
+    const subChips = subs.length > 0
+      ? [{ key: 'all', title: '全部', icon: '' }].concat(subs).map((s) =>
+        `<button type="button" class="filter-chip${s.key === filterSub ? ' active' : ''}" data-fs="${s.key}">${s.icon || ''} ${esc(s.title)}</button>`).join('')
+      : '';
+    box.innerHTML = `<div class="filter-row filter-main">${groupTabs}</div>${subChips ? `<div class="filter-row filter-sub">${subChips}</div>` : ''}`;
+  }
+
   function renderProducts() {
     const grid = document.getElementById('productsGrid');
     if (!grid) return;
-    grid.innerHTML = GROUPS.map((g) => {
-      const items = PRODUCTS.filter((p) => (p.group || 'pet') === g.key);
+    const html = CATS.groups.map((g) => {
+      if (filterGroup !== 'all' && filterGroup !== g.key) return '';
+      const items = PRODUCTS.filter((p) => groupOf(p) === g.key && (filterSub === 'all' || p.sub === filterSub));
       if (!items.length) return '';
-      return `<div class="group-title"><span>${g.title}</span><small>${g.sub}</small></div>` + items.map(cardHtml).join('');
+      return `<div class="group-title"><span>${g.icon || ''} ${esc(g.title)}</span><small>${esc(g.sub || '')}</small></div>` + items.map(cardHtml).join('');
     }).join('');
+    grid.innerHTML = html || '<p class="no-products">這個分類還沒有商品，換個分類看看吧 🐾</p>';
   }
+
+  const shopViewEl = document.getElementById('shopView');
+
+  /* 選了「毛孩好物／麻麻專屬」就進入分類頁：隱藏活動海報、折扣碼等上方內容，直接看商品；
+     選「全部」回到開團專區首頁。 */
+  function applyFilter(group, sub, opts) {
+    const o = opts || {};
+    const wasCat = filterGroup !== 'all';
+    filterGroup = group;
+    filterSub = sub;
+    if (group === 'all' || (sub !== 'all' && !PRODUCTS.some((p) => groupOf(p) === group && p.sub === sub))) filterSub = 'all';
+    if (shopViewEl) shopViewEl.classList.toggle('cat-mode', group !== 'all');
+    renderFilter();
+    renderProducts();
+    syncBackLabels();
+    if (o.push) {
+      const hash = group === 'all' ? '#shop' : '#shop-' + group;
+      if (wasCat && group !== 'all') history.replaceState({ view: 'shop' }, '', hash);
+      else if (window.location.hash !== hash) history.pushState({ view: 'shop' }, '', hash);
+    }
+    if (o.scroll) window.scrollTo({ top: 0, behavior: 'smooth' });
+  }
+
+  /* 分類頁裡的「返回」先回到開團專區首頁，不是直接回網站首頁 */
+  function syncBackLabels() {
+    const inCat = filterGroup !== 'all';
+    const top = document.querySelector('#backHomeBtn span');
+    const bottom = document.getElementById('bottomBackHomeBtn');
+    if (top) top.textContent = inCat ? '返回開團專區' : '返回首頁';
+    if (bottom) bottom.textContent = inCat ? '← 返回開團專區' : '← 返回黏黏首頁';
+  }
+
+  ['backHomeBtn', 'bottomBackHomeBtn'].forEach((id) => {
+    const el = document.getElementById(id);
+    if (!el) return;
+    el.addEventListener('click', (e) => {
+      if (filterGroup === 'all') return;
+      e.preventDefault();
+      e.stopImmediatePropagation();
+      applyFilter('all', 'all', { push: true, scroll: true });
+    }, true);
+  });
+
+  /* 瀏覽器上一頁／下一頁，或直接開 #shop-pet、#shop-human 連結 */
+  function applyHash() {
+    const h = window.location.hash;
+    if (h.indexOf('#shop') !== 0) return;
+    const g = h.replace('#shop-', '');
+    const known = CATS.groups.some((x) => x.key === g);
+    applyFilter(known ? g : 'all', 'all', { push: false });
+  }
+  window.addEventListener('popstate', applyHash);
 
   /* ---------- 商品詳情（底部彈出） ---------- */
   const sheet = document.getElementById('productSheet');
@@ -194,6 +284,10 @@
     const vis = visiblePlans(p);
     if (!vis.some((x) => x.i === currentPlan)) currentPlan = vis[0].i;
     const plan = p.plans[currentPlan];
+    const needPick = p.variants && pickedTotal() !== plan.qty;
+    const needMain = !requirementMet(p);
+    const blocked = needPick || needMain;
+    const blockedText = needMain ? '請先加入搭配的主商品' : (needPick ? `請先選滿 ${plan.qty} ${esc(p.unit)}` : '');
     area.innerHTML = `
       <div class="sheet-label">選擇方案（含運費）</div>
       <div class="plan-list" role="radiogroup">
@@ -218,7 +312,7 @@
           </div>`).join('')}
       </div>` : ''}
       ${p.notice ? `<p class="sheet-notice">📝 ${esc(p.notice)}</p>` : ''}
-      <button type="button" class="sheet-add-btn" id="sheetAddBtn"${p.variants && pickedTotal() !== plan.qty ? ' disabled' : ''}><span>${p.variants && pickedTotal() !== plan.qty ? `請先選滿 ${plan.qty} ${esc(p.unit)}` : `加入購物車・${money(priceOf(plan))}`}</span></button>
+      <button type="button" class="sheet-add-btn" id="sheetAddBtn"${blocked ? ' disabled' : ''}><span>${blockedText || `加入購物車・${money(priceOf(plan))}`}</span></button>
       ${couponClaimed
         ? `<p class="sheet-coupon">🎁 已套用黏黏麻折扣碼 <strong>${esc(CHECKOUT.couponCode || '')}</strong></p>`
         : `<button type="button" class="sheet-coupon-claim" id="sheetClaimBtn">🎁 領取黏黏麻折扣碼，立即看優惠價</button>`}`;
@@ -451,6 +545,8 @@
     const t = e.target.closest('button');
     if (!t) return;
 
+    if (t.dataset.fg !== undefined) { applyFilter(t.dataset.fg, 'all', { push: true, scroll: true }); return; }
+    if (t.dataset.fs !== undefined) { applyFilter(filterGroup, t.dataset.fs, { push: false, scroll: false }); return; }
     if (t.dataset.open) { openSheet(t.dataset.open); return; }
     if (t.dataset.plan !== undefined && sheet.contains(t)) {
       currentPlan = Number(t.dataset.plan);
@@ -482,10 +578,10 @@
       closeSheet();
       return;
     }
-    if (t.dataset.inc !== undefined) { cart[+t.dataset.inc].units += 1; saveCart(); renderCart(); return; }
+    if (t.dataset.inc !== undefined) { cart[+t.dataset.inc].units += stepOf(findProduct(cart[+t.dataset.inc].id)); saveCart(); renderCart(); return; }
     if (t.dataset.dec !== undefined) {
       const it = cart[+t.dataset.dec];
-      it.units -= 1;
+      it.units -= stepOf(findProduct(it.id));
       if (it.units <= 0) cart.splice(+t.dataset.dec, 1);
       saveCart(); renderCart(); return;
     }
@@ -514,7 +610,9 @@
   }
   if (shopView) new MutationObserver(syncFab).observe(shopView, { attributes: true, attributeFilter: ['class'] });
 
+  renderFilter();
   renderProducts();
   renderCart();
   syncFab();
+  applyHash();
 })();

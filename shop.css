@@ -514,3 +514,53 @@ textarea.cart-field { resize: vertical; min-height: 60px; }
 .cart-item-name { font-size: 0.95rem; }
 .cart-item-plan, .cart-line-label { font-size: 0.85rem; }
 .product-kind + .product-sub-brand { margin-top: 0; }
+
+/* ---------- 商品分類選單（開團專區最上方，捲動時固定在頂端） ---------- */
+.shop-filter {
+  position: sticky;
+  top: 0;
+  z-index: 50;
+  background: var(--clean-bg);
+  padding: 8px 0 8px;
+  margin: 0 -2px;
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+.filter-row { display: flex; gap: 8px; overflow-x: auto; scrollbar-width: none; padding: 2px; }
+.filter-row::-webkit-scrollbar { display: none; }
+.filter-tab, .filter-chip {
+  flex: 0 0 auto;
+  border: none;
+  font: inherit;
+  cursor: pointer;
+  white-space: nowrap;
+  border-radius: var(--radius-full);
+  transition: background 0.2s ease, color 0.2s ease;
+}
+.filter-tab {
+  background: #FFFFFF;
+  color: var(--brand-mocha);
+  font-size: 0.98rem;
+  font-weight: 800;
+  padding: 10px 18px;
+  box-shadow: var(--shadow-sm);
+  flex: 1 1 auto;
+}
+.filter-tab.active { background: var(--brand-rose); color: #FFFFFF; box-shadow: 0 3px 12px rgba(200, 130, 119, 0.32); }
+.filter-chip {
+  background: var(--brand-rose-soft);
+  color: var(--brand-rose-deep);
+  font-size: 0.88rem;
+  font-weight: 700;
+  padding: 7px 16px;
+}
+.filter-chip.active { background: var(--brand-mocha); color: #FFFFFF; }
+.no-products { grid-column: 1 / -1; text-align: center; color: var(--text-muted); padding: 30px 0; font-size: 0.95rem; }
+
+.filter-main .filter-tab { flex: 1 1 0; padding: 10px 4px; font-size: 0.92rem; text-align: center; }
+
+/* 分類頁：只留分類按鈕與商品，隱藏上方的標題卡、活動海報與 IG 區塊（折扣碼領取按鈕保留） */
+.page-view.cat-mode .shop-header-banner,
+.page-view.cat-mode .shop-campaign-section,
+.page-view.cat-mode .highlights-section { display: none; }
