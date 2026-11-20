@@ -574,3 +574,8 @@ textarea.cart-field { resize: vertical; min-height: 60px; }
   text-align: center;
 }
 .cart-lottery strong { font-size: 1.3rem; font-weight: 800; }
+
+/* 連結模式：商品名稱與圖片是外部連結 */
+a.product-image-link, a.product-name-btn, a.product-action-btn { text-decoration: none; cursor: pointer; }
+a.product-name-btn { color: var(--text-main); display: inline; }
+a.product-action-btn { display: flex; align-items: center; justify-content: center; }

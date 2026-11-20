@@ -5,9 +5,11 @@
 (function () {
   'use strict';
 
-  const PRODUCTS = window.NIAN_PRODUCTS || [];
-  const CATS = window.NIAN_CATEGORIES || { groups: [], subs: [] };
   const CHECKOUT = window.NIAN_CHECKOUT || {};
+  /* 連結模式：點商品直接前往原一頁式購買連結（沒有 link 的商品不顯示）；購物車模式：官網內選購 */
+  const LINK_MODE = CHECKOUT.mode === 'link';
+  const PRODUCTS = (window.NIAN_PRODUCTS || []).filter((p) => !LINK_MODE || p.link);
+  const CATS = window.NIAN_CATEGORIES || { groups: [], subs: [] };
   const STORAGE_KEY = 'nian_cart_v3';
   const COUPON_KEY = 'nian_coupon_v1';
 
@@ -126,21 +128,30 @@
   function cardHtml(p) {
     const min = Math.min.apply(null, visiblePlans(p).map((x) => priceOf(x.pl) / x.pl.qty));
     const anyDisc = couponClaimed && p.plans.some((pl) => typeof pl.couponPrice === 'number');
+    // 連結模式用外部連結（新分頁開啟），購物車模式用按鈕開啟商品詳情
+    const ext = 'target="_blank" rel="noopener noreferrer"';
+    const imgTag = LINK_MODE
+      ? (inner) => `<a href="${p.link}" ${ext} class="product-image-link" aria-label="前往選購 ${esc(p.name)}">${inner}</a>`
+      : (inner) => `<button type="button" class="product-image-link" data-open="${p.id}" aria-label="查看 ${esc(p.name)}">${inner}</button>`;
+    const nameTag = LINK_MODE
+      ? `<a href="${p.link}" ${ext} class="product-name-btn">${esc(p.name)}</a>`
+      : `<button type="button" class="product-name-btn" data-open="${p.id}">${esc(p.name)}</button>`;
+    const actionTag = LINK_MODE
+      ? `<a href="${p.link}" ${ext} class="product-action-btn"><span>前往選購 ➜</span></a>`
+      : `<button type="button" class="product-action-btn" data-open="${p.id}"><span>選購商品</span></button>`;
     return `
         <article class="product-card">
-          <button type="button" class="product-image-link" data-open="${p.id}" aria-label="查看 ${esc(p.name)}">
-            <img src="${p.image}" alt="${esc(p.name)}" class="product-img" loading="lazy">
-            <span class="product-badge-flag${p.hot ? ' hot-flag' : ''}">${esc(p.flag)}</span>
-          </button>
+          ${imgTag(`<img src="${p.image}" alt="${esc(p.name)}" class="product-img" loading="lazy">
+            <span class="product-badge-flag${p.hot ? ' hot-flag' : ''}">${esc(p.flag)}</span>`)}
           <div class="product-info">
             <span class="product-kind">${esc(p.kind || '')}</span>
             <div class="product-sub-brand">${esc(p.brand)}</div>
-            <h3 class="product-name"><button type="button" class="product-name-btn" data-open="${p.id}">${esc(p.name)}</button></h3>
+            <h3 class="product-name">${nameTag}</h3>
             <p class="product-intro">${esc(p.intro)}</p>
             <div class="product-tags">${p.tags.map((t) => `<span>${esc(t)}</span>`).join('')}</div>
             <div class="product-price${anyDisc ? ' is-coupon' : ''}">${money(Math.round(min))}<small> 起／${esc(p.unit)}${anyDisc ? '・折扣價' : ''}</small></div>
           </div>
-          <button type="button" class="product-action-btn" data-open="${p.id}"><span>選購商品</span></button>
+          ${actionTag}
         </article>`;
   }
 
@@ -605,7 +616,7 @@
   const shopView = document.getElementById('shopView');
   function syncFab() {
     const inShop = shopView && shopView.classList.contains('active-view');
-    fab.classList.toggle('visible', !!inShop);
+    fab.classList.toggle('visible', !!inShop && !LINK_MODE);
     if (!inShop) { closeSheet(); closeCart(); }
   }
   if (shopView) new MutationObserver(syncFab).observe(shopView, { attributes: true, attributeFilter: ['class'] });

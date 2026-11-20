@@ -39,8 +39,14 @@
       <!-- Hero Profile Section -->
       <header class="hero-card">
         <div class="cat-ears-decor" aria-hidden="true">
-          <span class="ear ear-left"></span>
-          <span class="ear ear-right"></span>
+          <svg class="ear-svg ear-l" viewBox="0 0 60 58" aria-hidden="true">
+            <path d="M8 52 L17 10 L52 52 Z" fill="#543D31" stroke="#543D31" stroke-width="10" stroke-linejoin="round"/>
+            <path d="M20 46 L24 25 L40 46 Z" fill="#E9B5AD" stroke="#E9B5AD" stroke-width="5" stroke-linejoin="round"/>
+          </svg>
+          <svg class="ear-svg ear-r" viewBox="0 0 60 58" aria-hidden="true">
+            <path d="M8 52 L17 10 L52 52 Z" fill="#543D31" stroke="#543D31" stroke-width="10" stroke-linejoin="round"/>
+            <path d="M20 46 L24 25 L40 46 Z" fill="#E9B5AD" stroke="#E9B5AD" stroke-width="5" stroke-linejoin="round"/>
+          </svg>
         </div>
 
         <div class="avatar-wrapper">
@@ -49,7 +55,17 @@
           <div class="avatar-badge">🐾</div>
         </div>
 
-        <h1 class="cat-name"><span class="cn-a">小公橘黏黏</span><span class="cn-sep"> | </span><span class="cn-b">貓咪日常研究室</span></h1>
+        <div class="hero-text">
+          <h1 class="cat-name"><span class="cn-a">小公橘黏黏</span><span class="cn-sep"> | </span><span class="cn-b">貓咪日常研究室</span></h1>
+          <div class="hero-links">
+            <a href="https://line.me/ti/g2/1yr7IigA4ahb10h13ZZnTlNnxLyDdGSsSPsvpQ?utm_source=invitation&utm_medium=link_copy&utm_campaign=default" target="_blank" rel="noopener noreferrer" class="cat-paw-pill">
+              <span class="paw-ico">🐾</span><span class="paw-txt">毛茸茸社群</span>
+            </a>
+            <a href="https://cat-care-guide-ten.vercel.app/" target="_blank" rel="noopener noreferrer" class="cat-paw-pill">
+              <span class="paw-ico">🐾</span><span class="paw-txt">照顧懶人包</span>
+            </a>
+          </div>
+        </div>
         
       </header>
 
@@ -58,7 +74,7 @@
         <!-- 雙11限時活動海報 (圖二，點擊可直接進入開團專區搶購) -->
         <div class="event-banner-card" id="eventBannerHome" role="button" tabindex="0" aria-label="雙11寵愛加碼好禮喵喵來，點擊進入開團專區">
           <div class="event-banner-img-box">
-            <img src="images/event_banner_home_square.webp" alt="雙11寵愛加碼 好禮喵喵來" class="event-banner-img">
+            <img src="images/event_banner_home_v3.webp" alt="雙11寵愛加碼 好禮喵喵來" class="event-banner-img">
           </div>
         </div>
 
@@ -99,35 +115,11 @@
 
         <!-- 官方傳送門小貓爪 (已拉掉 IG 廣播區，共 3 個精緻小貓爪) -->
         <div class="paw-portals-box">
-          <span class="paw-portals-title">🐾 官方傳送門</span>
-          <div class="paw-pills-grid">
-            <!-- 1. 毛茸茸社群 -->
-            <a href="https://line.me/ti/g2/1yr7IigA4ahb10h13ZZnTlNnxLyDdGSsSPsvpQ?utm_source=invitation&utm_medium=link_copy&utm_campaign=default" 
-               target="_blank" 
-               rel="noopener noreferrer" 
-               class="cat-paw-pill">
-              <span class="paw-ico">🐾</span>
-              <span class="paw-txt">毛茸茸社群</span>
-            </a>
-
-            <!-- 2. 黏黏麻的line -->
-            <a href="https://lin.ee/P8q4aqd" 
-               target="_blank" 
-               rel="noopener noreferrer" 
-               class="cat-paw-pill">
-              <span class="paw-ico">🐾</span>
-              <span class="paw-txt">黏黏麻 LINE</span>
-            </a>
-
-            <!-- 3. 懶人包指南 -->
-            <a href="https://cat-care-guide-ten.vercel.app/" 
-               target="_blank" 
-               rel="noopener noreferrer" 
-               class="cat-paw-pill">
-              <span class="paw-ico">🐾</span>
-              <span class="paw-txt">照顧懶人包</span>
-            </a>
-          </div>
+          <a href="https://lin.ee/P8q4aqd" target="_blank" rel="noopener noreferrer" class="cat-paw-pill line-big">
+            <span class="paw-ico">🐾</span>
+            <span class="paw-txt">黏黏麻 LINE</span>
+            <span class="line-join">點我加入 ➜</span>
+          </a>
         </div>
       </section>
 
@@ -233,14 +225,7 @@
           <p class="sub-copyright">橘貓黏黏的幸福成長空間 · 歡迎常來吸貓！</p>
         </div>
         <div class="footer-brand">
-          <div class="brand-badge">
-            <img src="images/brand_logo.png" alt="逸安國際商行 商標" class="brand-top-logo">
-            <div class="brand-text-col">
-              <span class="brand-main-title">逸安國際商行</span>
-              <span class="brand-sub-title">安安 & 黏黏 · 用好的，陪你更好</span>
-            </div>
-          </div>
-          <p class="footer-operator">本網站由逸安國際商行經營 · 用好的 • 陪你更好</p>
+          <img src="images/brand_logo.png" alt="品牌商標" class="footer-logo-only">
         </div>
       </footer>
 
@@ -267,7 +252,7 @@
           <div class="model-cat-intro">
             <h2 class="shop-hero-title">黏黏麻開團專區</h2>
             <p class="shop-hero-desc">
-              「這些都是麻麻親自幫我挑選把關的超級好物！<strong>點擊商品</strong>選好方案、加入購物車，直接在這裡下單喔🐾」
+              「這些都是麻麻親自幫我挑選把關的超級好物！<strong>點擊商品</strong>即可前往官方頁面選購，記得輸入折扣碼喔🐾」
             </p>
           </div>
         </div>
@@ -371,14 +356,7 @@
           <p class="copyright">Made with ♥ for <strong>黏黏 & 黏黏麻</strong></p>
         </div>
         <div class="footer-brand">
-          <div class="brand-badge">
-            <img src="images/brand_logo.png" alt="逸安國際商行 商標" class="brand-top-logo">
-            <div class="brand-text-col">
-              <span class="brand-main-title">逸安國際商行</span>
-              <span class="brand-sub-title">安安 & 黏黏 · 用好的，陪你更好</span>
-            </div>
-          </div>
-          <p class="footer-operator">本網站由逸安國際商行經營 · 用好的 • 陪你更好</p>
+          <img src="images/brand_logo.png" alt="品牌商標" class="footer-logo-only">
         </div>
       </footer>
 

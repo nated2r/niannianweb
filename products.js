@@ -6,6 +6,7 @@
    couponHidden：領取折扣碼後不提供的方案（折扣頁沒有這個組合）。
    group：'pet'（毛孩好物）或 'human'（飼主專屬），決定在哪個分區顯示；notice：詳情頁的提醒文字。
    sub：子分類（eat 吃的／use 用的／apply 擦的，可在下方 NIAN_CATEGORIES 增減）。
+   link：原供貨商的一頁式購買連結（連結模式下，點商品會直接前往這個網址）。沒有 link 的商品在連結模式不顯示。
    requires：加價購限定，填入需要先購買的商品 id（購物車裡有其中一個才能買）。
    kind：卡片上顯示的商品類型（一眼看出賣什麼）。
    variants / variantLabel：有多種香味或款式時，買家可混搭選擇；總數量仍合併計算方案價。
@@ -14,6 +15,7 @@
 window.NIAN_PRODUCTS = [
   {
     id: 'food-1150',
+    link: 'https://reseller.luckycat.life/onestepshop/pd/Y_2BpBNllo3uuYy9dpupG_2F2zaED9KcdR6DRxoNXTLIFgIIUrzczf8lUB09uRW_2BE6N_2BKNbXbtCg1mmLEh_2B6NYWCF54g4YcnauYCB_2BsvFkJ0MyFpEyrd5ijBw14J9GF2RTmA',
     sub: 'eat',
     kind: '貓狗主食｜凍乾益菌糧',
     descImages: ['https://dxpqg5f7jnxq8.cloudfront.net/editor/GA00494250003/17643082337293.jpg',
@@ -77,6 +79,7 @@ window.NIAN_PRODUCTS = [
   },
   {
     id: 'food-500',
+    link: 'https://reseller.luckycat.life/onestepshop/pd/Y_2BpBNllo3uuYy9dpupG_2F27YARqDeqBNH_2Birze8vMyiby5LJVoE2hT_2Bi4QPDUHcb1cYKjKWCVBE2_2B9hagj15ugIRREAGgbmVZ8aGT9OPOpLeKQ8dxU3iV5_2FxwKgJvpZ4q',
     sub: 'eat',
     kind: '貓狗主食｜凍乾益菌糧',
     descImages: [
@@ -139,6 +142,7 @@ window.NIAN_PRODUCTS = [
   },
   {
     id: 'spray-100',
+    link: 'https://reseller.luckycat.life/onestepshop/pd/Y_2BpBNllo3uuYy9dpupG_2F29YeV5AdWaxfG7YiHwS6D2pwNvpjQX4l_2FNkeST2gAwzdzctJfOP_2BKUN89a_2BFtqnr0fnCtNpb5lzIDEfRbL8nXf8A_2BZ6mmiPNatRGqUQCStyt',
     sub: 'apply',
     kind: '皮膚舒緩｜寵物噴霧',
     descImages: ['https://dxpqg5f7jnxq8.cloudfront.net/editor/DI00447250009/17502382041354.jpg'],
@@ -168,6 +172,7 @@ window.NIAN_PRODUCTS = [
   },
   {
     id: 'spray-20',
+    link: 'https://reseller.luckycat.life/onestepshop/pd/Y_2BpBNllo3uuYy9dpupG_2F2_2BIr4_2Fwxc6iORZrRqelaZq2XNkW35FKtsn9_2FuOaC9L0Qux_2BsEYFvNH1gqDgsmXJ59PQNqqYNiDrg_2FWtFEtSrjHFBu4jKKXapumJ2BiAudPJl',
     sub: 'apply',
     kind: '皮膚舒緩｜寵物噴霧',
     descImages: ['https://dxpqg5f7jnxq8.cloudfront.net/editor/DI00447260012/17797622679948.jpg'],
@@ -200,6 +205,7 @@ window.NIAN_PRODUCTS = [
   },
   {
     id: 'probiotics',
+    link: 'https://reseller.luckycat.life/onestepshop/pd/m_2B3xQZ6mb9Ykkeh8tdboemhX9igjGhkp_2BDhKwix8LQIzCTk6QAYjWdkVrzDynUaFUC1FYBMU4CdKTG8Bl8ZWohIvHk7qCdq6oTwIg7WkmoRXM0d03fJlUu62RXWPlN1k',
     sub: 'eat',
     kind: '寵物保健｜藍藻益生菌',
     descImages: ['https://dxpqg5f7jnxq8.cloudfront.net/editor/JU00027260100/17852957373184.png',
@@ -238,6 +244,7 @@ window.NIAN_PRODUCTS = [
   },
   {
     id: 'wipes',
+    link: 'https://reseller.luckycat.life/onestepshop/pd/Y_2BpBNllo3uuYy9dpupG_2F2_2Fe4V4voE_2FPSxlOeUxDI1HCxYbwVmFBsoMMcvVJZNWGejZgPr1t_2FhjYtEcrPFEpFIDbaD_2FAiDB0iVr2cBq6CyWZG0BVb8GbXTuUc51Ywu9Ri',
     sub: 'use',
     kind: '清潔用品｜寵物濕紙巾',
     descImages: ['https://dxpqg5f7jnxq8.cloudfront.net/editor/SH00169200014/16341187829456.jpg'],
@@ -270,6 +277,7 @@ window.NIAN_PRODUCTS = [
   /* ===================== 新增商品：毛孩好物 ===================== */
   {
     id: 'shampoo-2000',
+    link: 'https://www.luckyc.at/5aZVWGn',
     sub: 'apply',
     kind: '洗澡用品｜寵物洗毛露',
     group: 'pet',
@@ -316,6 +324,7 @@ window.NIAN_PRODUCTS = [
   },
   {
     id: 'slowbowl',
+    link: 'https://www.luckyc.at/1aLVaHf',
     sub: 'use',
     kind: '餵食用品｜慢食碗＋舔食墊',
     group: 'pet',
@@ -353,6 +362,7 @@ window.NIAN_PRODUCTS = [
   /* ===================== 新增商品：飼主專屬 ===================== */
   {
     id: 'spirulina-300',
+    link: 'https://reseller.luckycat.life/onestepshop/pd/fIHlWCM4xNwDJ3OVszhqZ1iFHFXL9tQtuJHUlI8rRNnolk0heSO0a9_2BtvisNdCpa_2BOgOMUXHURug4dSerHJ_2Bk_2BJ4rzCR7L3HUt1UcJiJlZ9HOC_2F0zhAbnNi2Q9QI_2Blw3',
     sub: 'glow',
     kind: '飼主保健｜藍藻錠',
     group: 'human',
@@ -388,6 +398,7 @@ window.NIAN_PRODUCTS = [
   },
   {
     id: 'enzyme-30',
+    link: 'https://reseller.luckycat.life/onestepshop/pd/fIHlWCM4xNwDJ3OVszhqZ4_2FZ4A5yGpBT2YK_2FxMgaCV3pR1dbWF78vyh8ZYWDbFbDvoOLJzGaK_2BB4_2BkgOWOed1TiE9Ugpyb0_2FCQ8N4Z_2F9h12oDxO2lcFYrd81gVOOTcIO',
     sub: 'shape',
     kind: '飼主保健｜夜酵素',
     group: 'human',
@@ -427,6 +438,7 @@ window.NIAN_PRODUCTS = [
   },
   {
     id: 'enzyme-80',
+    link: 'https://reseller.luckycat.life/onestepshop/pd/fIHlWCM4xNwDJ3OVszhqZ4_2FZ4A5yGpBT2YK_2FxMgaCV07UfT244Id8pGJMj3FtIui_2FkepsBlzh0Ikzt_2Fxf8QaHRXK0OuFjVpNrwRVgq2aLpgKHyzl9mjaRZXr4m9oqMcl',
     sub: 'shape',
     kind: '飼主保健｜夜酵素',
     group: 'human',
@@ -465,6 +477,7 @@ window.NIAN_PRODUCTS = [
   /* ===================== 新增商品（第三批） ===================== */
   {
     id: 'virusout',
+    link: 'https://reseller.luckycat.life/onestepshop/pd/OGhRmSITZoRFlYQv1jO_2FA3hLlgcLjEGgbsBUtfM_2Fh_2Fs9MTosgsJMm_2F7HITiNeCfiefa8beFfJxgxDnd2x_2BstbV0mfmOB1FJBdgTaMKklIbPppxXhAf6USTzDaegv1ufv',
     group: 'pet',
     sub: 'use',
     kind: '清潔消毒｜環境抗菌錠',
@@ -499,6 +512,7 @@ window.NIAN_PRODUCTS = [
   },
   {
     id: 'gebe-cloth',
+    link: 'https://reseller.luckycat.life/onestepshop/pd/OGhRmSITZoRFlYQv1jO_2FA4HV6j7sIrcUETWlF8KBPTJj4fXig29bBpaV1djVLklePL0K769xOJsoglrI4jy06x5_2BwaE6i2jCRC4TJ4f3H7bWKMXyDefK6QWMn_2BvlULHP',
     group: 'human',
     sub: 'beauty',
     kind: '飼主美容｜卸妝潔顏巾',
@@ -530,6 +544,7 @@ window.NIAN_PRODUCTS = [
   },
   {
     id: 'seaweed-fish',
+    link: 'https://reseller.luckycat.life/onestepshop/pd/OGhRmSITZoRFlYQv1jO_2FA8JVXGLNMnCeAT6dMCdCEA0YylGE5esiVBkaTnlHQgdIrda2tA31tKAwcyEp7b2iz9tGo5Vy2BrfD1hDOV4Fv7zF7pM2i407cPEdYR_2Bbo8Gc',
     group: 'human',
     sub: 'snack',
     kind: '飼主零食｜海苔脆魚捲',
@@ -569,6 +584,7 @@ window.NIAN_PRODUCTS = [
   },
   {
     id: 'chitose-tea',
+    link: 'https://reseller.luckycat.life/onestepshop/pd/OGhRmSITZoRFlYQv1jO_2FA9heKs3Wb_2F1PtYLhm1U1uuwpESDGBMkZqImkAeOwcHRQ_2FnlpEQ0atHxT9PDLYUYwt5891yR_2Fhe8q75yQbVuOJsyvA_2FovlHZysVGYeLtVvj1q',
     group: 'human',
     sub: 'shape',
     kind: '飼主保健｜纖體沖泡飲',
@@ -604,6 +620,7 @@ window.NIAN_PRODUCTS = [
   },
   {
     id: 'metawater',
+    link: 'https://reseller.luckycat.life/onestepshop/pd/OGhRmSITZoRFlYQv1jO_2FA2M88gMsy6O6YjVPTuzzJ5ggsFGpnFKbddFQAARLCus2ZzRQyQJYTjBg8_2FWIQlleYz_2FseZbxmuBoJQrziPk8KhrPf_2FdbJHctTg_2BFI_2FjgX1iG',
     group: 'human',
     sub: 'glow',
     kind: '飼主保健｜氣泡飲',
@@ -637,6 +654,7 @@ window.NIAN_PRODUCTS = [
   },
   {
     id: 'beautystyle',
+    link: 'https://reseller.luckycat.life/onestepshop/pd/OGhRmSITZoRFlYQv1jO_2FA47YjsAXEbOZeGz7qrRGtsmq0vyxxtf08XUUouGPlqmZfHAGB8gWvR_2F7mDhAE_2BnqHBZC2oD_2FrQxPYdQ_2Fsp9BWCv_2F97J1FsRId5sEmAgqEZtp',
     group: 'human',
     sub: 'beauty',
     kind: '飼主保健｜發泡錠',
@@ -673,6 +691,7 @@ window.NIAN_PRODUCTS = [
   /* ===================== 新增商品（第四批） ===================== */
   {
     id: 'bulio',
+    link: 'https://reseller.luckycat.life/onestepshop/pd/OGhRmSITZoRFlYQv1jO_2FA47YjsAXEbOZeGz7qrRGtsn5ZrsEU74Q0oTKReLrOItnXR_2BEFtV1vVUXIxCt_2BqqeIetsBVQ4p0jYJoCJXdBSQuiKQtURnMoyoQiIKJv5ktyP',
     group: 'human', sub: 'shape',
     kind: '飼主保健｜油切發泡錠',
     descImages: [
@@ -710,6 +729,7 @@ window.NIAN_PRODUCTS = [
   },
   {
     id: 'body-oil-set',
+    link: 'https://reseller.luckycat.life/onestepshop/pd/OGhRmSITZoRFlYQv1jO_2FA9PexROpDY8AOar_2Bimw425Jh_2FY3dlFkirjGmFXr4jCeUg0oLv5HrnVwEAqow6P0_2B1xxZYvleDJ96hE5yVexbYfRPwxYWwbnN3JtqXfLK7POn',
     group: 'human', sub: 'beauty',
     kind: '美體保養｜美體油＋經絡刷',
     descImages: [
@@ -742,6 +762,7 @@ window.NIAN_PRODUCTS = [
   },
   {
     id: 'scalp-set',
+    link: 'https://reseller.luckycat.life/onestepshop/pd/OGhRmSITZoRFlYQv1jO_2FA9PexROpDY8AOar_2Bimw425IacyYBVlyKzqlnv8J8PCH4k3IOmx_2BMvqQwrsfk3s8jCM5tHdoMkHLtJp0IZWQTSSlzPTkQnUeaeV3IodykYVsu',
     group: 'human', sub: 'beauty',
     kind: '頭皮養護｜精粹露＋直髮梳',
     descImages: [
@@ -774,6 +795,7 @@ window.NIAN_PRODUCTS = [
   },
   {
     id: 'boomca',
+    link: 'https://reseller.luckycat.life/onestepshop/pd/OGhRmSITZoRFlYQv1jO_2FAwKnEAygjxb5GvW_2F8o8rrT4_2F7veupxuwg7uXLj5VZEhPX0zz0_2BlTxA2TP42nr2E6GCb7DrcKlEFHLk6wrOzTZM4suc_2FuCsTsUvbWWH3qma_2B8',
     group: 'human', sub: 'glow',
     kind: '飼主保健｜鈣補給軟糖',
     descImages: [
@@ -811,6 +833,7 @@ window.NIAN_PRODUCTS = [
   },
   {
     id: 'amds-300',
+    link: 'https://reseller.luckycat.life/onestepshop/pd/OGhRmSITZoRFlYQv1jO_2FAwbo1nEj29qgh8H5flt2IAc2wU7pPSSUxZKAPOiBhPgVe8r_2FMKRMF9FDTto_2FlQVtEpZwTwY4J58goZKI_2FsvZt4cE3tyaEZNzJslYAW3xogyH',
     group: 'human', sub: 'beauty',
     kind: '肌膚護理｜速舒修護組',
     descImages: [
@@ -841,6 +864,7 @@ window.NIAN_PRODUCTS = [
   },
   {
     id: 'combio8',
+    link: 'https://reseller.luckycat.life/onestepshop/pd/OGhRmSITZoRFlYQv1jO_2FAy3Hi3NS5ZCONbHmU7jEFs4JgDbD8kxA5B602G_2Bu3EYT4RVe6oFAv62r79b3zrUvdczuLsi9qm9ynDePb9Pu_2FZQBRUJYL_2FgKCZVFAzrjugvQ',
     group: 'human', sub: 'glow',
     kind: '飼主保健｜益生菌',
     descImages: [
@@ -874,6 +898,7 @@ window.NIAN_PRODUCTS = [
   },
   {
     id: 'face-oil-set',
+    link: 'https://reseller.luckycat.life/onestepshop/pd/OGhRmSITZoRFlYQv1jO_2FA9PexROpDY8AOar_2Bimw425Jds05jey1bxDHYNiN5lkOTHdDRBbMwSWTHp7FnM60nUKUVghG2QW_2FLz9hoxghwUAx6BZjhDrBVWGYsVsAgrAYi',
     group: 'human', sub: 'beauty',
     kind: '臉部保養｜精華油＋經絡梳',
     descImages: [
@@ -925,7 +950,279 @@ window.NIAN_PRODUCTS = [
     details: [
       { title: '加價購說明', text: '多功能按摩梳為「每日疏通刷刷組」與「全效修復精華油組」的加價購商品，需購買其中一款才能加購，單價 $390，不另提供折扣碼價。' }
     ]
+  },
+  /* ===================== 新增商品（第五批） ===================== */
+  {
+    id: 'brownrice-roll',
+    group: 'human', sub: 'snack',
+    link: 'https://reseller.luckycat.life/onestepshop/pd/yxiDLQK1wMRKrsvhmS0xN2mJR7vzGqotzh2r1sIQyqUv7BdiMwRO6DNa72Zo1sGsYm4jspLw1CGJ8WLSQE60buO1ApwonmglKJWALLAHJ2vl_2F3Vu6_2FjfaonM36tnOpud',
+    kind: '飼主零食｜糙米捲',
+    descImages: [
+      'https://dxpqg5f7jnxq8.cloudfront.net/editor/DI00034200001/16206242230801.jpg'
+    ],
+    brand: '酷覓星',
+    name: '香鬆起士糙米捲 180g',
+    fullName: '酷覓星 香鬆起士糙米捲（添加奇亞籽、彩虹藜麥）',
+    image: 'images/products/brownrice_roll.jpg',
+    flag: '香酥點心',
+    intro: '香鬆起士口味，添加奇亞籽與彩虹藜麥，建議冷藏後食用風味更佳。',
+    tags: ['起士口味', '180g/包'],
+    unit: '包',
+    plans: [
+      { label: '2 包', qty: 2, price: 700, couponPrice: 496 },
+      { label: '4 包', qty: 4, price: 1330, couponPrice: 922 },
+      { label: '6 包', qty: 6, price: 1930, couponPrice: 1318 },
+      { label: '8 包', qty: 8, price: 2530, couponPrice: 1714 },
+      { label: '10 包', qty: 10, price: 3130, couponPrice: 2110 },
+      { label: '12 包', qty: 12, price: 3760, couponPrice: 2536 },
+      { label: '16 包', qty: 16, price: 4960, couponPrice: 3328 },
+      { label: '24 包', qty: 24, price: 7360, couponPrice: 4912 }
+    ],
+    details: [
+      { title: '商品資訊', rows: [['規格','180 公克 ± 5 公克'],['葷素別','葷食'],['原產地','台灣'],['保存期限','10 個月']] },
+      { title: '注意事項', text: '本產品含有蛋、小麥、牛奶、大豆、芝麻、杏仁等堅果類，對其過敏者請勿食用。建議冷藏後食用風味更佳，包裝單品拆開後請立即食用。巧克力製成產品因溫度變化，可能產生霧狀油脂，屬正常現象。' }
+    ]
+  },
+  {
+    id: 'blackpollen',
+    group: 'human', sub: 'glow',
+    link: 'https://reseller.luckycat.life/onestepshop/pd/yxiDLQK1wMRKrsvhmS0xN_2Ft_2BfyB1_2FqRvVzrCnum4eAgVxNN7f_2FSam1vMZlNQ61fOuHiAAqYcmT7xtbQLHtgKEBJ7K7ZvFi0PREy23JCsf_2Fu2S7_2FSa5H2sH96mSU9R1As',
+    kind: '飼主保健｜黑麥花粉錠',
+    descImages: [
+      'https://dxpqg5f7jnxq8.cloudfront.net/editor/SH00169240055/17218202158293.jpg',
+      'https://dxpqg5f7jnxq8.cloudfront.net/editor/SH00169240055/17218203094933.jpg'
+    ],
+    brand: '幸福奇想',
+    name: '黑花粉 Blackpollen 120錠',
+    fullName: '幸福奇想 黑花粉 Blackpollen',
+    image: 'images/products/blackpollen.jpg',
+    flag: '全素可食',
+    intro: '黑麥花粉萃取錠，平日保養 2 錠、加強保養 4 錠，全素可食。',
+    tags: ['全素', '120錠/瓶'],
+    unit: '瓶',
+    plans: [
+      { label: '1 瓶', qty: 1, price: 4740, couponPrice: 3000 }
+    ],
+    details: [
+      { title: '商品資訊', rows: [['內容量','120 錠／瓶，250mg／錠'],['葷素別','全素'],['原料產地','美國（委託幸福奇想在台製造）'],['使用方式','平日保養 2 錠，加強保養 4 錠'],['保存期限','24 個月（未開封）']] },
+      { title: '注意事項', text: '開封後每次拿取請確認瓶蓋是否蓋緊，以免內容物受潮。請置於陰涼乾燥處，避免陽光直射。' }
+    ]
+  },
+  {
+    id: 'doubleberry',
+    group: 'human', sub: 'glow',
+    link: 'https://reseller.luckycat.life/onestepshop/pd/yxiDLQK1wMRKrsvhmS0xNwdoOigEwiJ4XuwLfNp5jutVuLq93gm_2B4B5BIcoF2Ompwq1aBcs_2FbYuAEqEN19hEvVRug_2F0tn5e_2BaraxJ1daLbQ2LK_2FC_2FxsSw45ohiT0uMiX',
+    kind: '飼主保健｜蔓越莓膠囊',
+    descImages: [
+      'https://dxpqg5f7jnxq8.cloudfront.net/editor/JU00027230081/17808970095096.jpg',
+      'https://dxpqg5f7jnxq8.cloudfront.net/editor/JU00027230081/17808970205648.jpg',
+      'https://dxpqg5f7jnxq8.cloudfront.net/editor/JU00027230081/17808970320933.jpg'
+    ],
+    brand: 'Double Berry',
+    name: '漫悅莓素食膠囊 60粒',
+    fullName: 'Double Berry 漫悅莓素食膠囊',
+    image: 'images/products/doubleberry.jpg',
+    flag: '素食膠囊',
+    intro: '蔓越莓、洛神花與乳酸菌配方的素食膠囊，每日 1~2 粒。',
+    tags: ['素食', '60粒/盒'],
+    unit: '盒',
+    plans: [
+      { label: '1 盒', qty: 1, price: 4900, couponPrice: 3280 },
+      { label: '2 盒', qty: 2, price: 9700, couponPrice: 6460 }
+    ],
+    details: [
+      { title: '商品資訊', rows: [['規格','500mg／粒，60 粒／盒'],['葷素別','素食'],['原產地','台灣'],['保存期限','未拆封三年'],['建議使用方式','每日 1~2 次，每次 1 粒，搭配冷溫開水食用，飯前飯後皆可（多食無益）']] },
+      { title: '注意事項', text: '請置於陰涼乾燥及兒童不易取得處，避免高溫、陽光直射，開封後請儘速食用完畢。完整成分請見商品介紹圖。' }
+    ]
+  },
+  {
+    id: 'sujitong',
+    group: 'human', sub: 'glow',
+    link: 'https://reseller.luckycat.life/onestepshop/pd/yxiDLQK1wMRKrsvhmS0xNwYYLkchJvXOHgu0BG0372VNwreug2ddhBaVL3h4j40IhuOTMYzlRA_2ByLz4P0d_2B5eJXQb4FIdqDy1ordJTjt5J_2BIwehCPEo27zGDSqwWbfdu',
+    kind: '飼主保健｜補養膠囊',
+    descImages: [
+      'https://dxpqg5f7jnxq8.cloudfront.net/editor/JU00027240022/17778712911141.jpg'
+    ],
+    brand: '速疾通',
+    name: '速疾通膠囊 60顆',
+    fullName: '速疾通膠囊',
+    image: 'images/products/sujitong.jpg',
+    flag: '日常補養',
+    intro: '血紅素搭配多種草本萃取的膠囊，分調整期與保養期食用。',
+    tags: ['草本萃取', '60顆/瓶'],
+    unit: '罐',
+    plans: [
+      { label: '1 罐', qty: 1, price: 6080, couponPrice: 4060 }
+    ],
+    details: [
+      { title: '商品資訊', rows: [['規格','450 毫克／膠囊，60 顆／瓶'],['葷素別','葷食'],['原產地','台灣'],['保存期限','三年'],['建議使用方式','調整期：一天 4 顆（早晚或午晚各 2 顆，飯後食用）；保養期：一天 2 顆，飯後食用']] },
+      { title: '注意事項', text: '本產品含有草本原料，每批粉末顏色會依季節性略有差異，屬正常現象。' }
+    ]
+  },
+  {
+    id: 'superi',
+    group: 'human', sub: 'glow',
+    link: 'https://reseller.luckycat.life/onestepshop/pd/yxiDLQK1wMRKrsvhmS0xN5AQZDrTh9_2BVGW8ViRA1sRBOym46RG_2B6vdaeXrmfylbmWWMLi02Hh1hmmAJ86QHzRW5jliEsMUcqmxHrOJQBdZguGGH7BXzC6XUQG7nT_2BtLT',
+    kind: '飼主保健｜葉黃素膠囊',
+    descImages: [
+      'https://dxpqg5f7jnxq8.cloudfront.net/editor/JU00027250009/17767518456357.jpg',
+      'https://dxpqg5f7jnxq8.cloudfront.net/editor/JU00027250009/17767518556074.jpg',
+      'https://dxpqg5f7jnxq8.cloudfront.net/editor/JU00027250009/17767645171243.jpg'
+    ],
+    brand: 'Double Power',
+    name: 'Super i 極視能 14粒行動補給盒',
+    fullName: 'Double Power Super i 極視能 14粒行動補給盒',
+    image: 'images/products/superi.jpg',
+    flag: '純素膠囊',
+    intro: '葉黃素加多種植物萃取，14 粒體驗瓶附 7 天記錄表，純素可食。',
+    tags: ['純素', '14粒/瓶'],
+    unit: '盒',
+    plans: [
+      { label: '2 盒', qty: 2, price: 3840, couponPrice: 2500 }
+    ],
+    details: [
+      { title: '商品資訊', rows: [['組合內容','極視能 14 粒體驗瓶 × 1、7 天體驗記錄表 × 1'],['規格','580 毫克／粒，14 粒／瓶'],['葷素別','純素'],['食用方式','每日 1-2 次，每次 1 粒，每日限食用 2 粒，搭配冷溫開水食用'],['保存期限','未拆封三年']] },
+      { title: '注意事項', text: '請置於陰涼乾燥及兒童不易取得處，避免高溫、陽光直射。' }
+    ]
+  },
+  {
+    id: 'perch-drink',
+    group: 'human', sub: 'glow',
+    link: 'https://reseller.luckycat.life/onestepshop/pd/yxiDLQK1wMRKrsvhmS0xNx93vLcJ2toC5oJe8hpQNg62jPyOOq7cfv_2BsxqULOnAil_2Fs9i6kZ9QupjqJWytAZ01gYFhCyRpyiwYro74DCXihVehR7fsIyyAoA6pIPgss6',
+    kind: '飼主保健｜鱸魚飲',
+    descImages: [
+      'https://dxpqg5f7jnxq8.cloudfront.net/editor/SH00169250068/17757117901754.jpg',
+      'https://dxpqg5f7jnxq8.cloudfront.net/editor/SH00169250068/17757117974508.jpg',
+      'https://dxpqg5f7jnxq8.cloudfront.net/editor/SH00169250068/17769201464152.jpg'
+    ],
+    brand: '幸福鱸魚',
+    name: '幸福鱸魚飲 粉橘版 10瓶',
+    fullName: '幸福鱸魚飲（粉橘版）',
+    image: 'images/products/perch_drink.jpg',
+    flag: '每日一瓶',
+    intro: '鱸魚萃取加乳清蛋白、魚膠原蛋白，每日一瓶，冰涼後飲用風味更佳。',
+    tags: ['水蜜桃風味', '50ml×10瓶'],
+    unit: '盒',
+    plans: [
+      { label: '1 盒', qty: 1, price: 2600, couponPrice: 1860 },
+      { label: '2 盒', qty: 2, price: 5100, couponPrice: 3620 },
+      { label: '3 盒', qty: 3, price: 7600, couponPrice: 5380 },
+      { label: '4 盒', qty: 4, price: 10100, couponPrice: 7140 },
+      { label: '6 盒', qty: 6, price: 15130, couponPrice: 10690 }
+    ],
+    details: [
+      { title: '商品資訊', rows: [['規格','50 毫升／瓶，10 瓶／盒'],['葷素別','葷'],['原產地','台灣'],['保存期限','18 個月'],['建議使用方式','每日 1 瓶，冰涼後飲用風味更佳']] },
+      { title: '注意事項', text: '本品含奶類、魚類及其製品，食用後如有不適感或過敏，請停止食用。孕婦及授乳中婦女、服藥或身體不適者，請先洽詢專業醫師意見。請依照建議量食用，多食無益。' }
+    ]
+  },
+  {
+    id: 'intimate-set',
+    group: 'human', sub: 'beauty',
+    link: 'https://reseller.luckycat.life/onestepshop/pd/yxiDLQK1wMRKrsvhmS0xN97N_2FbcqPCzKjQhedwcZk1wsL13qGpy_2BwyfY4y664_2FXnA1fU4_2Ffp1e4h3ohMWyM_2BpLTRpNoLqX37XX_2FjeKmSEtVIe7gwhkVxP_2FzsRhslVgz3',
+    kind: '私密保養｜精華油雙效組',
+    descImages: [
+      'https://dxpqg5f7jnxq8.cloudfront.net/editor/DU00498260020/17792449495826.jpg',
+      'https://dxpqg5f7jnxq8.cloudfront.net/editor/DU00498260020/17792449562163.jpg',
+      'https://dxpqg5f7jnxq8.cloudfront.net/editor/DU00498260020/17792449607502.jpg',
+      'https://dxpqg5f7jnxq8.cloudfront.net/editor/DU00498260020/17792449654874.jpg'
+    ],
+    brand: '私密守護',
+    name: '「私密守護」雙效套組',
+    fullName: '「私密守護」雙效套組（精華油噴霧 30ml × 1 瓶＋精華油膠囊 10 入 × 1 盒）',
+    image: 'images/products/intimate_set.jpg',
+    flag: '雙效套組',
+    intro: '長效型私密精華油噴霧搭配精華油膠囊，日常私密保養一次到位。',
+    tags: ['噴霧30ml', '膠囊10入'],
+    unit: '組',
+    plans: [
+      { label: '1 組', qty: 1, price: 2170, couponPrice: 1800 },
+      { label: '2 組', qty: 2, price: 4240, couponPrice: 3500 },
+      { label: '3 組', qty: 3, price: 6310, couponPrice: 5200 }
+    ],
+    details: [
+      { title: '商品資訊', rows: [['組合內容','長效型私密精華油噴霧 30ml × 1 瓶＋長效型私密精華油膠囊 10 入 × 1 盒'],['原產地','台灣'],['保存期限','三年'],['保存方法','請置陰涼乾燥處保存，避免陽光直射']] },
+      { title: '注意事項', text: '僅供外用，使用後若有肌膚不適請立即停用，並向醫師諮詢，避免置於孩童可觸及處。' }
+    ]
+  },
+  {
+    id: 'lipbalm',
+    group: 'human', sub: 'beauty',
+    link: 'https://reseller.luckycat.life/onestepshop/pd/yxiDLQK1wMRKrsvhmS0xN3qeNpZdZhkTHzoMdPpl0qC_2FeKwvEHQXVKJHLap6bC1a_2FxnG9ptuJPdV1wr37vejzYtqdbysk1DYPBOAVgvCXamGTGGVLO7fXvcOddblLVH_2B',
+    kind: '唇部保養｜潤唇膏',
+    descImages: [
+      'https://dxpqg5f7jnxq8.cloudfront.net/editor/AI00039260017/17782339987132.jpg'
+    ],
+    brand: 'CROWN ONE LIP',
+    name: '唯一秘蜜 高端養護型潤唇膏',
+    fullName: 'CROWN ONE LIP 唯一秘蜜 高端養護型潤唇膏',
+    image: 'images/products/lipbalm.jpg',
+    flag: '唇部養護',
+    intro: '荷荷芭籽油、覆盆子籽油、角鯊烷等配方，滋潤、保濕、修護雙唇。',
+    tags: ['3.5g', '台灣製'],
+    unit: '支',
+    plans: [
+      { label: '1 支', qty: 1, price: 1040, couponPrice: 580 },
+      { label: '2 支', qty: 2, price: 1680, couponPrice: 760 },
+      { label: '4 支', qty: 4, price: 3200, couponPrice: 1360 }
+    ],
+    details: [
+      { title: '商品資訊', rows: [['淨重','3.5g'],['用途','唇部滋潤、保濕、修護'],['原產地','台灣'],['有效日期','三年'],['使用方式','直接塗於唇部，或以指尖、棉花棒沾取適量塗抹']] },
+      { title: '注意事項', text: '使用後請將管嘴擦拭乾淨並蓋緊。避免置於高溫處，僅供外用。膏體較為脆弱，請避免轉出太多或用力來回塗抹，以免斷裂。肌膚若出現紅腫、發癢、刺激等異常現象，請停止使用並諮詢醫生。' }
+    ]
+  },
+  {
+    id: 'cooling-oil',
+    group: 'human', sub: 'shape',
+    link: 'https://reseller.luckycat.life/onestepshop/pd/yxiDLQK1wMRKrsvhmS0xN97N_2FbcqPCzKjQhedwcZk1zYBpDZjgKH0_2FEAgrXKsJVtzj5NpbxgVVcryUm3WMRecRhcMJxs7vuFgD_2FIeSpgDPi9VFDwRoHDzyQa2ISh3RtM',
+    kind: '美體保養｜冰涼油',
+    descImages: [
+      'https://dxpqg5f7jnxq8.cloudfront.net/editor/DU00498250005/17617203353781.jpg',
+      'https://dxpqg5f7jnxq8.cloudfront.net/editor/DU00498250005/17617203409286.jpg'
+    ],
+    brand: '朵妮朵絲',
+    name: '酸凍冰涼油',
+    fullName: '朵妮朵絲 酸凍冰涼油',
+    image: 'images/products/cooling_oil.jpg',
+    flag: '冰涼保養',
+    intro: '朵妮朵絲酸凍冰涼油，台灣製外用保養油。',
+    tags: ['外用', '台灣製'],
+    unit: '瓶',
+    plans: [
+      { label: '1 瓶', qty: 1, price: 780, couponPrice: 690 },
+      { label: '2 瓶', qty: 2, price: 1460, couponPrice: 1280 },
+      { label: '3 瓶', qty: 3, price: 2140, couponPrice: 1870 },
+      { label: '4 瓶', qty: 4, price: 2820, couponPrice: 2460 }
+    ],
+    details: [
+      { title: '商品資訊', rows: [['規格','48 × 48 × 120mm'],['原產地','台灣'],['保存期限','3 年'],['保存方式','請置陰涼乾燥處保存，避免陽光直射']] },
+      { title: '注意事項', text: '僅供外用，使用後若有肌膚不適請立即停用，避免置於孩童可觸及處。' }
+    ]
+  },
+  {
+    id: 'krill-oil',
+    group: 'human', sub: 'glow',
+    link: 'https://reseller.luckycat.life/onestepshop/pd/yxiDLQK1wMRKrsvhmS0xN2fnwE1VbXPxKXoFyDJovNs5fSv9BW40BxEQlEeNF1Bn1wPCl5NY613PK3ziCCz_2F6QzjgyjuCT1IOezpcrJZ8fzX8U6c4_2B9JdeRPpHTDytru',
+    kind: '飼主保健｜磷蝦油',
+    descImages: [
+      'https://dxpqg5f7jnxq8.cloudfront.net/editor/JU00027230030/1733476597891.jpg'
+    ],
+    brand: 'Pures Select',
+    name: '南極冰鑽磷蝦油 30顆',
+    fullName: 'Pures Select 南極冰鑽頂級磷蝦油（30粒／盒）',
+    image: 'images/products/krill_oil.jpg',
+    flag: '頂級磷蝦油',
+    intro: '挪威 Superba2 南極磷蝦油，搭配藻油 DHA、葉酸等多種複合配方。',
+    tags: ['南極磷蝦油', '30顆/盒'],
+    unit: '盒',
+    plans: [
+      { label: '2 盒', qty: 2, price: 5060, couponPrice: 3600 }
+    ],
+    details: [
+      { title: '商品資訊', rows: [['規格','30 顆／盒；每顆軟膠囊 595.75 毫克 ± 5%'],['葷素別','葷食'],['主原料產地','南極（製程包裝地：台灣）'],['保存期限','三年（未拆封且正常保存）']] },
+      { title: '注意事項', text: '本產品含有蝦蟹類製品，對其過敏者請勿食用。完整注意事項請見外包裝與商品介紹圖。' }
+    ]
   }
+
 ];
 
 /* 商品分類：group 是大分類，每個大分類各有自己的子分類 subs（名稱可自由改）。
@@ -950,6 +1247,8 @@ window.NIAN_CATEGORIES = {
 
 /* 結帳設定 */
 window.NIAN_CHECKOUT = {
+  // 'link'：點商品直接前往原一頁式購買連結（目前）；'cart'：在官網內選購、加入購物車、送訂單到 LINE
+  mode: 'link',
   couponCode: '000349',
   lineUrl: 'https://lin.ee/P8q4aqd',
   lineId: '@478ihlka' // 黏黏麻 LINE 官方帳號，用來帶入訂單文字
